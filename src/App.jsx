@@ -10,6 +10,7 @@ import * as authService from './services/authService'
 import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import { drinks } from './data/drink-data'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -24,6 +25,8 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  const [drinkCategory, setDrinkCategory] = useState()
 
   return (
     <>
@@ -53,7 +56,7 @@ const App = () => {
         />
         <Route
           path="/my-tastes"
-          element={<MyTastes />}
+          element={<MyTastes drinks={drinks} setDrinkCategory={setDrinkCategory}/>}
         />
         <Route
           path="/changePassword"
