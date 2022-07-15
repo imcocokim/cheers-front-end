@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import MyTastes from './pages/'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -38,6 +39,14 @@ const App = () => {
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/add-song"
+          element={<AddSong />}
+        />
+        <Route
+          path="/my-tastes"
+          element={<MyTastes />}
         />
         <Route
           path="/changePassword"
