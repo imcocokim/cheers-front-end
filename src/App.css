@@ -1,0 +1,12 @@
+.navbar { 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    list-style-type: none;
+    padding: 0 20px ;
+    background-color: aqua;
+    background: rgb(136, 132, 132);
+ }
