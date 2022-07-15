@@ -43,12 +43,13 @@ const App = () => {
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
-          path={`/profiles/${user.profile._id}`}
+          path="/profile"
           element={<ProfileDetails />}
         />
         <Route
           path="/add-song"
           element={<AddSong />}
+          user={user}
         />
         <Route
           path="/my-tastes"
