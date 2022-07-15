@@ -20,7 +20,7 @@ const Profiles = () => {
       {profiles.length ? 
         <>
           {profiles.map(profile =>
-            <div className='card'>
+            <div className='all-profiles'>
               <img 
                 src={
                   profile.photo
@@ -30,7 +30,9 @@ const Profiles = () => {
                 style={{width:"150px"}}
               />
               <div className='card-body'>
+                <Link to='/profile'>
                 <h2 key={profile._id} className='card-text'>{profile.name}</h2>
+                </Link>
                 <p className='card-text'>{profile.favoriteSong}</p>
                 <p className='card-text'>{profile.favoriteDrink}</p>
               </div>
