@@ -1,3 +1,5 @@
+import drinks from "../../../data/drink-data";
+
 const MyTastes = (props) => {
   const tastes = [...new Set(props.drinks.map(
     (drink) => drink.taste
