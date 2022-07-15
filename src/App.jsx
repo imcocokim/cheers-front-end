@@ -8,7 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddSong from './pages/AddSong/AddSong'
-import MyTastes from './pages/MyTastes/MyTastes'
+// import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 
 const App = () => {
@@ -43,17 +43,19 @@ const App = () => {
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
-          path={`/profiles/${user.profile._id}`}
+          path="/profiles/:id"
           element={<ProfileDetails />}
+          user={user}
         />
         <Route
           path="/add-song"
           element={<AddSong />}
+          user={user}
         />
-        <Route
+        {/* <Route
           path="/my-tastes"
           element={<MyTastes />}
-        />
+        /> */}
         <Route
           path="/changePassword"
           element={
