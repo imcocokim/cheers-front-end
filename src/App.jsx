@@ -7,7 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
-import AddSong from './pages/AddSong/AddSong'
+// import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
 
 const App = () => {
@@ -41,10 +41,10 @@ const App = () => {
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
-        <Route
+        {/* <Route
           path="/add-song"
           element={<AddSong />}
-        />
+        /> */}
         <Route
           path="/my-tastes"
           element={<MyTastes />}
