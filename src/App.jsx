@@ -9,6 +9,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -40,6 +41,10 @@ const App = () => {
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+        <Route
+          path={`/profiles/${user.profile._id}`}
+          element={<ProfileDetails />}
         />
         <Route
           path="/add-song"
