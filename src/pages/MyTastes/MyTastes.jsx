@@ -2,7 +2,7 @@
 
 const MyTastes = (props) => {
   const tastes = [...new Set(props.drinks.map(
-    (drink) => drink.taste
+    (drink) => drink.category
   ))]
   return ( 
     <select onChange={(e) => props.setDrinkCategory(e.target.value)}>
