@@ -12,13 +12,30 @@ const Profiles = () => {
     fetchProfiles()
   }, [])
 
+  console.log(profiles)
+
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
+      <h1>Profiles</h1>
       {profiles.length ? 
         <>
           {profiles.map(profile =>
-            <p key={profile._id}>{profile.name}</p>
+            <div className='card'>
+              <img 
+                src={
+                  profile.photo
+                }
+                alt= {profile.name}
+                className="card-photo"
+                style={{width:"150px"}}
+              />
+              <div className='card-body'>
+                <h2 key={profile._id} className='card-text'>{profile.name}</h2>
+                <p className='card-text'>{profile.favoriteSong}</p>
+                <p className='card-text'>{profile.favoriteDrink}</p>
+              </div>
+            </div>
+            
           )}
         </>
       :
