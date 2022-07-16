@@ -3,7 +3,7 @@ import * as profileService from '../../services/profileService'
 
 import Profile from '../../components/Profile/Profile'
 
-const Profiles = () => {
+const Profiles = ({user}) => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Profiles = () => {
       {profiles.length ? 
         <>
           {profiles.map((profile) =>
-            <Profile profile={profile} key={profile._id}/>
+            <Profile profile={profile} user={user} key={profile._id}/>
           )}
         </>
       :

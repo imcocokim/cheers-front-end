@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Nav.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, userProfile, handleLogout }) => {
   return (
     <>
       {user ?
@@ -12,10 +12,9 @@ const NavBar = ({ user, handleLogout }) => {
             <li className={styles.navul}><Link to="/boozy-tunes">Boozy Tunes</Link></li>
             <li className={styles.navul}><Link to="/my-tastes">My Tastes</Link></li>
             <li className={styles.navul}><Link to="/profiles">Profiles</Link></li>
-            <li className={styles.navul}><Link to="/my-page">My Page</Link></li>
+            <li className={styles.navul}><Link to="/my-page" state={userProfile}>My Page</Link></li>
             <li className={styles.navul}><Link to="/changePassword">Change Password</Link></li>
             <li className={styles.navul}><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-
           </ul>
         </nav>
       :
@@ -26,8 +25,6 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/signup">Add Tune</Link></li>
             <li><Link to="/signup">Boozy Tunes</Link></li>
             <li><Link to="/signup">My Taste</Link></li>
-
-
           </ul>
         </nav>
       }
