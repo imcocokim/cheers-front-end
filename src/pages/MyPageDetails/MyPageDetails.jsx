@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MyPageDetails = ({user}) => {
   const location = useLocation()
-  console.log(location)
-  const [profile, setProfile] = useState(location.state.profile)
-  console.log(user)
+  const [profile, setProfile] = useState(location.state)
   return ( 
     <>
       <img src={profile.photo}

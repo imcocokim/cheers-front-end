@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
@@ -16,6 +17,7 @@ import { drinks } from './data/drink-data'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [userProfile, setUserProfile] = useState()
   const navigate = useNavigate()
   const handleLogout = () => {
     authService.logout()
@@ -27,11 +29,20 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const [drinkCategory, setDrinkCategory] = useState()
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      const profileData = await profileService.getAllProfiles()
+      const userProf = profileData.filter(profile => profile._id === user.profile)
+      setUserProfile(userProf[0])
+    }
+    fetchProfiles()
+  }, [user.profile])
 
+  const [drinkCategory, setDrinkCategory] = useState()
+  
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} userProfile={userProfile} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -44,7 +55,7 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" />}
+          element={user ? <Profiles user={user} /> : <Navigate to="/login" />}
         />
         <Route
           path="/profile"
@@ -52,7 +63,7 @@ const App = () => {
         />
         <Route
           path="/my-page"
-          element={<MyPageDetails user={user}/>}
+          element={<MyPageDetails user={user} />}
         />
         <Route
           path="/edit-profile"

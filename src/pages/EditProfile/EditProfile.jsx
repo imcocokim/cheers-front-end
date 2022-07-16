@@ -7,7 +7,6 @@ const EditProfile = props => {
   const navigate = useNavigate()
   const location = useLocation()
   const [formData, setFormData] = useState(location.state.profile)
-  console.log(location)
 
   const handleChange = e => {
     setFormData({
@@ -74,7 +73,7 @@ const EditProfile = props => {
         <button disabled={isFormInvalid()} className={styles.button}>
           Edit Profile
         </button>
-        <Link to='/profiles'>
+        <Link to='/my-page' state={formData}>
           <button>Cancel</button>
         </Link>
       </div>
