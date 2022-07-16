@@ -1,6 +1,4 @@
 const MyTastes = (props) => {
-  console.log(props)
-
   return ( 
     <>
     <select>
@@ -28,7 +26,7 @@ const MyTastes = (props) => {
 
     </select>
     </>
-  );
+  )
 }
 
 export default MyTastes;

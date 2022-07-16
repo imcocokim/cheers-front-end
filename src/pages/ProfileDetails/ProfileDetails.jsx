@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react' 
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useState } from 'react' 
+import { useLocation } from 'react-router-dom'
 
 
 const ProfileDetails = ({user}) => {
@@ -10,10 +9,10 @@ const ProfileDetails = ({user}) => {
   return ( 
     <>
       <img src={profile.photo}
-          alt={profile.name}
-          className="profile-photo"
-          style={{width:"300px"}}
-        />
+        alt={profile.name}
+        className="profile-photo"
+        style={{width:"300px"}}
+      />
       <h1>{profile.name}</h1> 
       {profile.favoriteSong}
       {profile.favoriteDrink}
@@ -22,7 +21,7 @@ const ProfileDetails = ({user}) => {
         song/drink card goes here
       </div>
     </>
-  );
+  )
 }
 
-export default ProfileDetails;
+export default ProfileDetails

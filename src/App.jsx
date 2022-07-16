@@ -38,8 +38,6 @@ const App = () => {
     fetchProfiles()
   }, [user.profile])
 
-  const [drinkCategory, setDrinkCategory] = useState()
-  
   return (
     <>
       <NavBar user={user} userProfile={userProfile} handleLogout={handleLogout} />
