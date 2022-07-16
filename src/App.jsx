@@ -11,6 +11,7 @@ import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import { drinks } from './data/drink-data'
+import EditProfile from './pages/EditProfile/EditProfile'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -47,7 +48,11 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={<ProfileDetails />}
+          element={<ProfileDetails user={user} />}
+        />
+        <Route
+          path="/edit-profile"
+          element={<EditProfile user={user} />}
         />
         <Route
           path="/add-song"
@@ -56,7 +61,7 @@ const App = () => {
         />
         <Route
           path="/my-tastes"
-          element={<MyTastes drinks={drinks} setDrinkCategory={setDrinkCategory}/>}
+          element={<MyTastes drinks={drinks} />}
         />
         <Route
           path="/changePassword"

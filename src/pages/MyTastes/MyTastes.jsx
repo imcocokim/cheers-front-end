@@ -1,18 +1,34 @@
-
-
 const MyTastes = (props) => {
-  const tastes = [...new Set(props.drinks.map(
-    (drink) => drink.category
-  ))]
+  console.log(props)
+
   return ( 
-    <select onChange={(e) => props.setDrinkCategory(e.target.value)}>
-    {tastes.map((taste,idx) => (
-      <option key={idx} value={taste}>
-        {taste}
-      </option>
-    ))}
-  </select>
+    <>
+    <select>
+      <option disabled>Wine</option>
+      {props.drinks.map((drink, idx) => (
+        drink.category === "Wine" &&
+        <option key={idx}>
+          {drink.name}
+        </option>
+      ))} 
+      <option disabled>Beer</option>
+      {props.drinks.map((drink, idx) => (
+        drink.category === "Beer" &&
+        <option key={idx}>
+          {drink.name}
+        </option>
+      ))} 
+      <option disabled>Spirit</option>
+      {props.drinks.map((drink, idx) => (
+        drink.category === "Spirit" &&
+        <option key={idx}>
+          {drink.name}
+        </option>
+      ))} 
+
+    </select>
+    </>
   );
 }
- 
+
 export default MyTastes;
