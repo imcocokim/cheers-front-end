@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-const MyPageDetails = () => {
+const MyPageDetails = ({user}) => {
   const location = useLocation()
   console.log(location)
   const [profile, setProfile] = useState(location.state.profile)
-
+  console.log(user)
   return ( 
     <>
       <img src={profile.photo}

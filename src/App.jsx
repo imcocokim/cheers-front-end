@@ -17,7 +17,6 @@ import { drinks } from './data/drink-data'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -53,7 +52,7 @@ const App = () => {
         />
         <Route
           path="/my-page"
-          element={<MyPageDetails state={user} />}
+          element={<MyPageDetails user={user}/>}
         />
         <Route
           path="/edit-profile"
