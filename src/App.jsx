@@ -10,8 +10,9 @@ import * as authService from './services/authService'
 import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
-import { drinks } from './data/drink-data'
+import MyPageDetails from './pages/MyPageDetails/MyPageDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
+import { drinks } from './data/drink-data'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -49,6 +50,10 @@ const App = () => {
         <Route
           path="/profile"
           element={<ProfileDetails user={user} />}
+        />
+        <Route
+          path="/my-page"
+          element={<MyPageDetails state={user} />}
         />
         <Route
           path="/edit-profile"
