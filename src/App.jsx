@@ -36,7 +36,7 @@ const App = () => {
       setUserProfile(userProf[0])
     }
     fetchProfiles()
-  }, [user.profile])
+  }, [user])
 
   return (
     <>
