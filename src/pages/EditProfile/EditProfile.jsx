@@ -7,6 +7,7 @@ const EditProfile = props => {
   const navigate = useNavigate()
   const location = useLocation()
   const [formData, setFormData] = useState(location.state.profile)
+  const [photoData, setPhotoData] = useState({})
 
   const handleChange = e => {
     setFormData({
@@ -26,6 +27,10 @@ const EditProfile = props => {
     }
   }
 
+  const handleChangePhoto = (evt) => {
+    setPhotoData({ photo: evt.target.files[0] })
+  }
+
   const isFormInvalid = () => {
     return !(formData.name && formData.favoriteSong)}
   return (
@@ -34,6 +39,17 @@ const EditProfile = props => {
       onSubmit={handleSubmit}
       className={styles.container}
     >
+      <div className={styles.inputContainer}>
+        <label htmlFor="photo-upload" className={styles.label}>
+          Upload Photo
+        </label>
+        <input
+          type="file"
+          id="photo-upload"
+          name="photo"
+          onChange={handleChangePhoto}
+        />
+      </div>
       <div className={styles.inputContainer}>
         <label htmlFor="name" className={styles.label}>Name</label>
         <input
