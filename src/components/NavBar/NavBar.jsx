@@ -21,9 +21,6 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
           <ul className={styles.navitems}>
             <li className={styles.navul}><Link to="/login">Log In</Link></li>
             <li className={styles.navul}><Link to="/signup">Sign Up</Link></li>
-            <li className={styles.navul}><Link to="/signup">Add Tune</Link></li>
-            <li className={styles.navul}><Link to="/signup">Boozy Tunes</Link></li>
-            <li className={styles.navul}><Link to="/signup">My Taste</Link></li>
           </ul>
         </nav>
       }
