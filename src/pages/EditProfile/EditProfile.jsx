@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from '../../components/SignupForm/SignupForm.module.css'
 import * as authService from '../../services/authService'
+import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown";
 
 const EditProfile = props => {  
   const navigate = useNavigate()
@@ -27,8 +28,7 @@ const EditProfile = props => {
   }
 
   const isFormInvalid = () => {
-    return !(formData.name && formData.favoriteSong && formData.favoriteDrink)
-  }
+    return !(formData.name && formData.favoriteSong)}
   console.log(formData)
   return (
     <form
@@ -60,14 +60,7 @@ const EditProfile = props => {
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="favorite-drink" className={styles.label}>Favorite Drink</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="favoriteDrink"
-          value={formData.favoriteDrink ? formData.favoriteDrink : ""}
-          name="favoriteDrink"
-          onChange={handleChange}
-        />
+          <DrinkDropdown drinks={props.drinks} />
       </div>
       <div className={styles.inputContainer}>
         <button disabled={isFormInvalid()} className={styles.button}>
