@@ -13,7 +13,6 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
             <li className={styles.navul}><Link to="/my-tastes">My Tastes</Link></li>
             <li className={styles.navul}><Link to="/profiles">Profiles</Link></li>
             <li className={styles.navul}><Link to="/my-page" state={userProfile}>My Page</Link></li>
-            <li className={styles.navul}><Link to="/changePassword">Change Password</Link></li>
             <li className={styles.navul}><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
           </ul>
         </nav>
