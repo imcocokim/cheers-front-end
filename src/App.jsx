@@ -38,6 +38,10 @@ const App = () => {
     fetchProfiles()
   }, [user])
 
+  const handleUpdateProfile = async (profileData) => {
+    const updatedProfile = await profileService.updateProfile(profileData)
+  }
+
   return (
     <>
       <NavBar user={user} userProfile={userProfile} handleLogout={handleLogout} />
