@@ -80,7 +80,7 @@ const App = () => {
         />
         <Route
           path="/my-tastes"
-          element={<MyTastes drinks={drinks} />}
+          element={<MyTastes drinks={drinks} userProfile={userProfile}/>}
         />
         <Route
           path="/changePassword"
