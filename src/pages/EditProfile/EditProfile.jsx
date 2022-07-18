@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from '../../components/SignupForm/SignupForm.module.css'
-import * as authService from '../../services/authService'
 import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown";
 
 const EditProfile = props => {  
   const navigate = useNavigate()
   const location = useLocation()
   const [formData, setFormData] = useState(location.state.profile)
+  const [photoData, setPhotoData] = useState({})
 
   const handleChange = e => {
     setFormData({
@@ -19,23 +19,37 @@ const EditProfile = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      // navigate('/')
+      props.handleUpdateProfile(formData)
+      navigate('/')
       console.log(formData, "FORM DATA*******")
     } catch (err) {
-      // props.updateMessage(err.message)
       console.log(err)
     }
   }
 
+  const handleChangePhoto = (evt) => {
+    setPhotoData({ photo: evt.target.files[0] })
+  }
+
   const isFormInvalid = () => {
     return !(formData.name && formData.favoriteSong)}
-  console.log(formData)
   return (
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
     >
+      <div className={styles.inputContainer}>
+        <label htmlFor="photo-upload" className={styles.label}>
+          Upload Photo
+        </label>
+        <input
+          type="file"
+          id="photo-upload"
+          name="photo"
+          onChange={handleChangePhoto}
+        />
+      </div>
       <div className={styles.inputContainer}>
         <label htmlFor="name" className={styles.label}>Name</label>
         <input
@@ -60,7 +74,7 @@ const EditProfile = props => {
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="favorite-drink" className={styles.label}>Favorite Drink</label>
-          <DrinkDropdown drinks={props.drinks} />
+          <DrinkDropdown drinks={props.drinks} onChange={handleChange} />
       </div>
       <div className={styles.inputContainer}>
         <button disabled={isFormInvalid()} className={styles.button}>
