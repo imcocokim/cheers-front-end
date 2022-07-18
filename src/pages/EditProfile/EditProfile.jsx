@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from '../../components/SignupForm/SignupForm.module.css'
-import * as authService from '../../services/authService'
 import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown";
 
 const EditProfile = props => {  
@@ -19,10 +18,10 @@ const EditProfile = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      // navigate('/')
+      props.handleUpdateProfile(formData)
+      navigate('/')
       console.log(formData, "FORM DATA*******")
     } catch (err) {
-      // props.updateMessage(err.message)
       console.log(err)
     }
   }
