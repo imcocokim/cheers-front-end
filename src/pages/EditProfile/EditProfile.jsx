@@ -29,7 +29,6 @@ const EditProfile = props => {
 
   const isFormInvalid = () => {
     return !(formData.name && formData.favoriteSong)}
-  console.log("FORM DATA", formData)
   return (
     <form
       autoComplete="off"
@@ -60,7 +59,7 @@ const EditProfile = props => {
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="favorite-drink" className={styles.label}>Favorite Drink</label>
-          <DrinkDropdown drinks={props.drinks} onChange={handleChange}/>
+          <DrinkDropdown drinks={props.drinks} onChange={handleChange} />
       </div>
       <div className={styles.inputContainer}>
         <button disabled={isFormInvalid()} className={styles.button}>

@@ -1,7 +1,7 @@
 const DrinkDropdown = (props) => {
   return ( 
-    <select onChange={props.onChange}>
-      <option>Select Drink...</option>
+    <select onChange={props.onChange} name="favoriteDrink">
+      <option></option>
       <option disabled>WINE</option>
       {props.drinks.map((drink, idx) => (
         drink.category === "Wine" &&
