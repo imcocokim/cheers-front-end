@@ -21,9 +21,13 @@ const MyPageDetails = ({user}) => {
       >
         Edit
       </Link>
+      
+      <Link to="/changePassword">Change Password</Link>
+      
       {profile.favoriteSong}
       {profile.favoriteDrink}
       <h2>{profile.name}'s Boozy Tunes</h2>
+      
       <div>
         song/drink card goes here
       </div>
