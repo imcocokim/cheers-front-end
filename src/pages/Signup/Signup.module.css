@@ -1,3 +1,8 @@
+body {
+  background: url(../../components/images/photo-1546081614-6f95a437dc2c.jpeg);
+  background-size: cover;
+}
+
 .container {
   display: flex;
   align-items: center;
