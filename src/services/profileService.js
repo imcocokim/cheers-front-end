@@ -19,8 +19,9 @@ async function addPhoto(photoData, profileId) {
   })
   return await res.json()
 }
+
 async function updateProfile(profileData) {
-  const res = await fetch(`${BASE_URL}/${profileData._id}`, {
+  const res = await fetch(`${BASE_URL}/${profileData._id}/edit-profile`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
@@ -32,7 +33,7 @@ async function updateProfile(profileData) {
 }
 
 async function updatePhoto(photoData, profileId) {
-  const res = await fetch(`${BASE_URL}/${profileId}/add-photo`, {
+  const res = await fetch(`${BASE_URL}/${profileId}/edit-photo`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
