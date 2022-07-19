@@ -38,9 +38,10 @@ const App = () => {
     fetchProfiles()
   }, [user])
 
-  const handleUpdateProfile = async (profileData) => {
+  const handleUpdateProfile = async (profileData, photoData, profileId) => {
     const updatedProfile = await profileService.updateProfile(profileData)
-    setUserProfile({...profileData, updatedProfile})
+    const updatedPhoto = await profileService.updatePhoto(photoData, profileId)
+    setUserProfile({...profileData, updatedProfile, ...photoData, updatedPhoto})
     navigate('/')
   }
 

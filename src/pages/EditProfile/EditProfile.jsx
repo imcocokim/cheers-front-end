@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from '../../components/SignupForm/SignupForm.module.css'
-import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown";
-import AddSong from '../AddSong/AddSong';
+import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown"
+
 
 
 const EditProfile = props => {  
@@ -21,7 +21,7 @@ const EditProfile = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      props.handleUpdateProfile(formData)
+      props.handleUpdateProfile(formData, photoData.photo)
       navigate('/')
       console.log(formData, "FORM DATA*******")
     } catch (err) {
