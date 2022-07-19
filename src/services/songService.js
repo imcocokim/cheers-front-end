@@ -10,6 +10,17 @@ async function searchSongs(artist, song) {
   return await res.json()
 }
 
+async function addBoozyTune(song) {
+  console.log('SONG DATA', song)
+  const res = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    body: song.data
+  })
+  return await res.json()
+}
+
 export {
-  searchSongs
+  searchSongs,
+  addBoozyTune
 }
