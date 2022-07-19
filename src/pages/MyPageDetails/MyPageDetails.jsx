@@ -1,6 +1,7 @@
 import { useState } from 'react' 
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import boozyTuneCard from '../../components/boozyTuneCard/boozyTuneCard';
 
 
 const MyPageDetails = ({user}) => {
@@ -29,7 +30,9 @@ const MyPageDetails = ({user}) => {
       <h2>{profile.name}'s Boozy Tunes</h2>
       
       <div>
-        song/drink card goes here
+        <boozyTuneCard 
+  
+        />
       </div>
       
     </>
