@@ -18,19 +18,21 @@ const EditProfile = props => {
     })
   }
 
+  
+  const handleChangePhoto = (evt) => {
+    setPhotoData({ photo: evt.target.files[0] })
+  }
+  
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      props.handleUpdateProfile(formData, photoData.photo)
-      navigate('/')
-      console.log(formData, "FORM DATA*******")
+      props.handleUpdateProfile(formData)
+      props.handleUpdatePhoto(photoData.photo)
+      navigate(-1)
+      console.log(formData, "FORM DATA*******", photoData.photo)
     } catch (err) {
       console.log(err)
     }
-  }
-
-  const handleChangePhoto = (evt) => {
-    setPhotoData({ photo: evt.target.files[0] })
   }
 
   const isFormInvalid = () => {
