@@ -38,10 +38,14 @@ const App = () => {
     fetchProfiles()
   }, [user])
 
-  const handleUpdateProfile = async (profileData, photoData, profileId) => {
+  const handleUpdateProfile = async (profileData) => {
     const updatedProfile = await profileService.updateProfile(profileData)
+    setUserProfile({...profileData, updatedProfile})
+    navigate('/')
+  }
+  const handleUpdatePhoto = async (photoData, profileId) => {
     const updatedPhoto = await profileService.updatePhoto(photoData, profileId)
-    setUserProfile({...profileData, updatedProfile, ...photoData, updatedPhoto})
+    setUserProfile({...photoData, updatedPhoto})
     navigate('/')
   }
 
@@ -72,7 +76,7 @@ const App = () => {
         />
         <Route
           path="/edit-profile"
-          element={<EditProfile user={user} drinks={drinks} handleUpdateProfile={handleUpdateProfile}/>}
+          element={<EditProfile user={user} drinks={drinks} handleUpdateProfile={handleUpdateProfile} handleUpdatePhoto={handleUpdatePhoto}/>}
         />
         <Route
           path="/add-song"
