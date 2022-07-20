@@ -14,9 +14,19 @@ const ProfileDetails = ({user}) => {
         className="profile-photo"
         style={{width:"300px"}}
       />
-      <h1 className="profcon">{profile.name}</h1> 
-      {profile.favoriteSong}
-      {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}
+      <h1>{profile.name}</h1> 
+      <p>
+        {profile.favoriteSong
+          ? `Favorite Song: ${profile.favoriteSong?.name} by ${profile.favoriteSong?.artist}`
+          : `${profile.name} did not add favorite song`  
+        }
+      </p>
+      <p>
+        {profile.favoriteDrink
+          ? `Favorite Drink: ${profile.favoriteDrink?.name} ${profile.favoriteDrink?.category}`
+          : `${profile.name} did not add favorite drink`    
+        }
+      </p>
       <h2>{profile.name}'s Boozy Tunes</h2>
       <div>
         song/drink card goes here
