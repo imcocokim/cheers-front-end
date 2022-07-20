@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import DrinkDropdown from '../../components/DrinkDropdown/DrinkDropdown';
+import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import DrinkDropdown from '../../components/DrinkDropdown/DrinkDropdown'
 import * as profileService from '../../services/profileService'
-import { drinks } from '../../data/drink-data';
 
 const AddBoozyTune = () => {
   const navigate = useNavigate()
