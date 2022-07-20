@@ -53,14 +53,19 @@ console.log(drinkData)
     <button>Continue</button> <br></br><button>Cancel</button>
 
     <form action= "submit" method="POST">
-    <select>
-        <button>Yes</button>
-      <option value={drink.name}>Yes</option>
-    </select>
+      <h1>What drink best fits this song</h1>
+    <select name="drink">
+      {drinkData?.map(drink => 
+      
+      <option value={drink.name}>{drink.name}</option>
 
-    <select>
-        <button>No</button>
-      <option value={song.name}>No</option>
+
+   
+
+   )}
+
+
+      {/* <option value={song.name}>No</option> */}
 
       
     </select>
