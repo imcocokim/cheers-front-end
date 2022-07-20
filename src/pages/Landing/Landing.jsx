@@ -2,7 +2,7 @@ import styles from './Landing.module.css'
 
 const Landing = ({ user, handleLogout }) => {
   return (
-    <main>
+    <main className={styles.wcon}>
 
       <h1 className={styles.wel}>Welcome To CHEERS!!</h1>
       <p className={styles.par}>Come, grab a chair and share your thoughts on some of your favorite (or least favorite) drinks and music! No idea where to start? We got you! Inside, you'll be presented with the oppurtunity to pick
