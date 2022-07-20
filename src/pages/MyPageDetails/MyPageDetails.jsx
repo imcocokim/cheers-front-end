@@ -8,6 +8,7 @@ const MyPageDetails = () => {
   const [profile, setProfile] = useState(location.state)
 
   return ( 
+    profile &&
     <>
       <img src={profile.photo}
           alt={profile.name}
@@ -24,10 +25,19 @@ const MyPageDetails = () => {
       </Link>
       
       <Link to="/changePassword">Change Password</Link>
-      
-      {/* {profile.favoriteSong} */}
-      {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}
-      <h2>{profile.name}'s Boozy Tunes</h2>
+      <p>
+        {profile.favoriteSong
+          ? `Favorite Song: ${profile.favoriteSong?.name} by ${profile.favoriteSong?.artist}`
+          : 'Add your favorite song by clicking edit!'  
+        }
+      </p>
+      <p>
+        {profile.favoriteDrink
+          ? `Favorite Drink: ${profile.favoriteDrink?.name} ${profile.favoriteDrink?.category}`
+          : 'Add your favorite drink by clicking edit!'  
+        }
+      </p>
+      <h2>My Boozy Tunes</h2>
       
       <div>
         song/drink card goes here
