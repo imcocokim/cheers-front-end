@@ -41,7 +41,7 @@ const App = () => {
   const handleUpdateProfile = async (profileData) => {
     const updatedProfile = await profileService.updateProfile(profileData)
     setUserProfile({...profileData, updatedProfile})
-    navigate('/')
+    navigate(-1)
   }
 
 

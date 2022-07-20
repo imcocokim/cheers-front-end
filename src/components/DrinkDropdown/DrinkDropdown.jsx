@@ -6,21 +6,21 @@ const DrinkDropdown = (props) => {
       {props.drinks.map((drink, idx) => (
         drink.category === "Wine" &&
         <option key={idx}>
-          {drink.name}
+          {drink.name} {drink.category}
         </option>
       ))} 
       <option disabled>BEER</option>
       {props.drinks.map((drink, idx) => (
         drink.category === "Beer" &&
         <option key={idx}>
-          {drink.name}
+          {drink.name} {drink.category}
         </option>
       ))} 
       <option disabled>SPIRIT</option>
       {props.drinks.map((drink, idx) => (
         drink.category === "Spirit" &&
         <option key={idx}>
-          {drink.name}
+          {drink.name} {drink.category}
         </option>
       ))} 
   </select>
