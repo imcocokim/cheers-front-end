@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const MyPageDetails = ({user}) => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state)
+
   return ( 
     <>
       <img src={profile.photo}
