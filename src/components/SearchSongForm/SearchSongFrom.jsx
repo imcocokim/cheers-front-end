@@ -8,7 +8,6 @@ const SearchSongForm = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const data = await searchSongs(artist, song)
-    console.log(data)
     if (data.songs.track) {
       props.setResult(data.songs.track[0])
     } else {

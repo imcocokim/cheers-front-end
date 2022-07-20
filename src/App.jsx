@@ -8,18 +8,20 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import * as profileService from './services/profileService'
+import * as songService from './services/songService'
 import AddSong from './pages/AddSong/AddSong'
 import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import MyPageDetails from './pages/MyPageDetails/MyPageDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
 import * as drinkService from './services/drinkService'
+import AddBoozyTune from './pages/AddBoozyTune/AddBoozyTune'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [userProfile, setUserProfile] = useState()
   const [drinks, setDrinks] = useState(drinkService.getAllDrinks()) 
-
+  const [songs, setSongs] = useState([])
   const navigate = useNavigate()
   const handleLogout = () => {
     authService.logout()
@@ -32,13 +34,21 @@ const App = () => {
   }
 
   useEffect(() => {
-    const fetchProfiles = async () => {
+    const fetchUserProfile = async () => {
       const profileData = await profileService.getAllProfiles()
       const userProf = profileData.filter(profile => profile._id === user.profile)
       setUserProfile(userProf[0])
     }
-    fetchProfiles()
+    fetchUserProfile()
   }, [user])
+
+  useEffect(() => {
+    const fetchAllSongs = async () => {
+      const songData = await songService.getAllSongs()
+      setSongs(songData)
+    }
+    fetchAllSongs()
+  }, [])
 
   const handleUpdateProfile = async (profileData) => {
     const updatedProfile = await profileService.updateProfile(profileData)
@@ -87,6 +97,11 @@ const App = () => {
         <Route
           path="/add-song"
           element={<AddSong />}
+          user={user}
+        />
+        <Route
+          path="/add-boozy-tune"
+          element={<AddBoozyTune />}
           user={user}
         />
         <Route
