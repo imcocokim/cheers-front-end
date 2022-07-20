@@ -4,9 +4,8 @@ import React, { useEffect, useState } from "react";
 import * as drinkService from "../../services/drinkService"
 
 
-function BoozyTunesGame(props) {
+function BoozyTunesGame() {
   const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}`
-  console.log(props.songs)
   const [songData, setSongData] = useState([]);
   const [drinkData, setDrinkData] = useState([]);
   
@@ -14,9 +13,7 @@ function BoozyTunesGame(props) {
     
     const fetchDrinkData = async () => {
       const response = await fetch (`${BASE_URL}/api/drinks`);
-      console.log(response)
-      const newDrinkData = response.json();
-      console.log(newDrinkData)
+      const newDrinkData = await response.json();
       setDrinkData(newDrinkData)
     };
     const fetchSongData = async () => {
@@ -33,17 +30,16 @@ console.log(drinkData)
 
   return ( 
     <>
-    <h1>hdjdgjdhgjj</h1>
     <h1>Boozy Tunes</h1>
     <h2> Boozy Tunes Results</h2>
     <h3> 60% of users said YES, THIS SONG goes with THIS DRINK</h3>
     <p>This list of drinks</p>
-    {/* {drinkData?.map(drink => 
+    {drinkData?.map(drink => 
       
          <p>{drink.name}</p>
       
 
-      )} */}
+      )}
     {songData?.map(songs => 
       
          <p>{songs.name}</p>
