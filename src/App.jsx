@@ -87,7 +87,7 @@ const App = () => {
         />
         <Route
           path="/add-song"
-          element={<AddSong songs={songs}/>}
+          element={<AddSong />}
           user={user}
         />
         <Route

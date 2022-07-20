@@ -3,10 +3,9 @@ import { Link, useNavigate } from "react-router-dom"
 import SearchSongForm from "../../components/SearchSongForm/SearchSongFrom"
 import * as songService from '../../services/songService'
 
-const AddSong = (props) => {
+const AddSong = () => {
   const navigate = useNavigate()
   const [result, setResult] = useState()
-  console.log(props)
 
   const display = () => {
     return (
