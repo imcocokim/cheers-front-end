@@ -14,8 +14,8 @@ const ProfileDetails = ({user}) => {
         style={{width:"300px"}}
       />
       <h1>{profile.name}</h1> 
-      {profile.favoriteSong}
-      {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}
+      <p>Favorite Song: {/* {profile.favoriteSong} */}</p>
+      <p>Favorite Drink: {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}</p>
       <h2>{profile.name}'s Boozy Tunes</h2>
       <div>
         song/drink card goes here

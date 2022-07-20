@@ -25,9 +25,9 @@ const MyPageDetails = () => {
       
       <Link to="/changePassword">Change Password</Link>
       
-      {/* {profile.favoriteSong} */}
-      {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}
-      <h2>{profile.name}'s Boozy Tunes</h2>
+      <p>Favorite Song: {/* {profile.favoriteSong} */}</p>
+      <p>Favorite Drink: {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}</p>
+      <h2>My Boozy Tunes</h2>
       
       <div>
         song/drink card goes here
