@@ -7,6 +7,7 @@ import boozyTuneCard from '../../components/boozyTuneCard/boozyTuneCard';
 const MyPageDetails = ({user}) => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state)
+
   return ( 
     <>
       <img src={profile.photo}
