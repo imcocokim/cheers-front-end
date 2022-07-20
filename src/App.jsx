@@ -101,7 +101,7 @@ const App = () => {
         />
         <Route
           path="/add-boozy-tune"
-          element={<AddBoozyTune />}
+          element={<AddBoozyTune drinks={drinks}/>}
           user={user}
         />
         <Route
