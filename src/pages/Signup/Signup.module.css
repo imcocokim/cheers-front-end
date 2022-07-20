@@ -1,5 +1,13 @@
+body {
+  /* background: url(../../components/images/photo-1546081614-6f95a437dc2c.jpeg); */
+  /* background-size: cover; */
+  background-color: #212121;
+}
+
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
+

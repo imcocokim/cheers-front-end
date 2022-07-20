@@ -10,3 +10,9 @@
     background-color: aqua;
     background: rgb(136, 132, 132);
  }
+ body {
+    /* background: url(../../components/images/photo-1546081614-6f95a437dc2c.jpeg); */
+    /* background-size: cover; */
+    background-color: #212121;
+    
+  }
