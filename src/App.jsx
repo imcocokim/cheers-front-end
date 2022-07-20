@@ -53,8 +53,8 @@ const App = () => {
 
   const handleUpdateProfile = async (profileData) => {
     const updatedProfile = await profileService.updateProfile(profileData)
-    setUserProfile({...profileData, updatedProfile})
-    navigate(-1)
+    setUserProfile(updatedProfile)
+    navigate('/profiles')
   }
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const App = () => {
         />
         <Route
           path="/edit-profile"
-          element={<EditProfile user={user} drinks={drinks} handleUpdateProfile={handleUpdateProfile}/>}
+          element={<EditProfile user={user} drinks={drinks} songs={songs}handleUpdateProfile={handleUpdateProfile}/>}
         />
         <Route
           path="/add-song"
@@ -102,7 +102,7 @@ const App = () => {
         />
         <Route
           path="/add-boozy-tune"
-          element={<AddBoozyTune />}
+          element={<AddBoozyTune drinks={drinks} userProfile={userProfile}/>}
           user={user}
         />
         <Route

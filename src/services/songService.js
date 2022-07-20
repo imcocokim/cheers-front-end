@@ -16,7 +16,6 @@ async function getAllSongs() {
 }
 
 async function addSong(song) {
-  console.log('SONG DATA', song)
   const obj = {img: song.strTrackThumb, name: song.strTrack, artist: song.strArtist, genre: song.strGenre}
   const res = await fetch(BASE_URL, {
     method: 'POST',
