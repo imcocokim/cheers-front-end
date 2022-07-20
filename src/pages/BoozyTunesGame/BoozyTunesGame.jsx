@@ -52,20 +52,20 @@ console.log(drinkData)
 
     <button>Continue</button> <br></br><button>Cancel</button>
 
-    {/* <form action= "submit" method="POST">
+    <form action= "submit" method="POST">
     <select>
         <button>Yes</button>
-      <option value="Yes">Yes</option>
+      <option value={drink.name}>Yes</option>
     </select>
 
     <select>
         <button>No</button>
-      <option value="No">No</option>
+      <option value={song.name}>No</option>
 
       
     </select>
 
-    </form> */}
+    </form>
     </>
    )
 }
