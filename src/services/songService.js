@@ -10,7 +10,12 @@ async function searchSongs(artist, song) {
   return await res.json()
 }
 
-async function addBoozyTune(song) {
+async function getAllSongs() {
+  const res = await fetch(BASE_URL)
+  return res.json()
+}
+
+async function addSong(song) {
   console.log('SONG DATA', song)
   const obj = {img: song.strTrackThumb, name: song.strTrack, artist: song.strArtist, genre: song.strGenre}
   const res = await fetch(BASE_URL, {
@@ -23,5 +28,6 @@ async function addBoozyTune(song) {
 
 export {
   searchSongs,
-  addBoozyTune
+  getAllSongs,
+  addSong
 }
