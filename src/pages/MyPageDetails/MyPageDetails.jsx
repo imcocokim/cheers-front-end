@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import boozyTuneCard from '../../components/boozyTuneCard/boozyTuneCard';
 
 
-const MyPageDetails = ({user}) => {
+const MyPageDetails = () => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state)
 
@@ -26,8 +26,8 @@ const MyPageDetails = ({user}) => {
       
       <Link to="/changePassword">Change Password</Link>
       
-      {profile.favoriteSong}
-      {profile.favoriteDrink}
+      {/* {profile.favoriteSong} */}
+      {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}
       <h2>{profile.name}'s Boozy Tunes</h2>
       
       <div>

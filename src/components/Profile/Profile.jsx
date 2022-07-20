@@ -26,7 +26,7 @@ const Profile = ({user, profile}) => {
             </>
           }
           <p className='card-text'>Favorite Song: {profile.favoriteSong}</p>
-          <p className='card-text'>Favorite Drink: {profile.favoriteDrink}</p>
+          <p className='card-text'>Favorite Drink: {profile.favoriteDrink?.name} {profile.favoriteDrink?.category}</p>
         </div>
       </div>
     </>
