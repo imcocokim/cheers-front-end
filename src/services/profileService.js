@@ -32,21 +32,11 @@ async function updateProfile(profileData) {
   return await res.json()
 }
 
-async function updatePhoto(photoData, profileId) {
-  const res = await fetch(`${BASE_URL}/${profileId}/edit-photo`, {
-    method: 'PUT',
-    headers: {
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-    body: photoData
-  })
-  return await res.json()
-}
+
 
 
 export { 
   getAllProfiles, 
   addPhoto,
   updateProfile,
-  updatePhoto
 }
