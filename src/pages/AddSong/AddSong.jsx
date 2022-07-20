@@ -15,6 +15,12 @@ const AddSong = () => {
     )
   }
 
+  const addSongToDb = async () => {
+    const res = await songService.addSong(result)
+    console.log(res)
+    navigate('/add-boozy-tune', {state: res})
+  }
+
   return (
     <>
       <h1>Add a Song</h1>
@@ -25,9 +31,7 @@ const AddSong = () => {
         ? <>
             <img src={result.strTrackThumb} alt={`${result.strTrack} album cover`} />
             <p>{result.strTrack}: {result.strArtist} --- {result.strAlbum}</p>
-            {/* <Link to='/add-boozy-tune' state={result}> */}
-              <button onClick={() => songService.addSong(result)}>Add</button>
-            {/* </Link> */}
+            <button onClick={addSongToDb}>Add</button>
           </>
         : display()
       }

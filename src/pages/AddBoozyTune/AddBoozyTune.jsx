@@ -1,29 +1,46 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import DrinkDropdown from '../../components/DrinkDropdown/DrinkDropdown'
-import * as profileService from '../../services/profileService'
-
-const AddBoozyTune = () => {
+import * as boozyTuneService from '../../services/boozyTuneService'
+const AddBoozyTune = (props) => {
   const navigate = useNavigate()
   const location = useLocation()
   console.log(location)
   const track = location.state
 
   const [selectedDrink, setSelectedDrink] = useState()
+  const [comment, setComment] = useState('')
+
+  const handleChange = evt => {
+		setComment( evt.target.value )
+  }
 
   const handleDrinkChange = (event) => {
     setSelectedDrink(event.target.value)
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const obj = {
+      song: track._id,
+      pairedDrink: selectedDrink,
+      comment: comment,
+      author: props.userProfile
+    }
+    await boozyTuneService.addBoozyTune(obj)
+    navigate('/')
+  }
+  console.log(comment)
+  console.log(selectedDrink)
   return (
     <>
-      <form onSubmit={() => profileService.addBoozyTune(location.state)}>
-        <h1>{track.strTrack}</h1>
-        <h3>{track.strArtist}</h3>
-        <h3>{track.strGenre}</h3>
+      <form autoComplete='off' onSubmit={handleSubmit}>
+        <h1>{track.name}</h1>
+        <h3>{track.artist}</h3>
+        <h3>{track.genre}</h3>
         <button onClick={() => navigate('/add-song')}>Cancel</button><br />
-        <DrinkDropdown onChange={handleDrinkChange}/><br />
-        <input type="text"/><br />
+        <DrinkDropdown drinks={props.drinks} onChange={handleDrinkChange}/><br />
+        <input type="text" name='comment' value={comment} onChange={handleChange}/><br />
         <button type='submit'>Add Boozy Tune</button>
       </form>
     </>
