@@ -27,7 +27,6 @@ const AddSong = () => {
             <Link to='/add-boozy-tune' state={result}>
               <button>Add</button>
             </Link>
-            {/* <button onClick={() => songService.addBoozyTune(result)}>Add</button> */}
           </>
         : display()
       }
