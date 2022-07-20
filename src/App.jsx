@@ -13,11 +13,13 @@ import MyTastes from './pages/MyTastes/MyTastes'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import MyPageDetails from './pages/MyPageDetails/MyPageDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
-import { drinks } from './data/drink-data'
+import * as drinkService from './services/drinkService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [userProfile, setUserProfile] = useState()
+  const [drinks, setDrinks] = useState(drinkService.getAllDrinks()) 
+
   const navigate = useNavigate()
   const handleLogout = () => {
     authService.logout()
@@ -43,6 +45,14 @@ const App = () => {
     setUserProfile({...profileData, updatedProfile})
     navigate(-1)
   }
+
+  useEffect(() => {
+    const fetchDrinks = async () => {
+      const drinkData = await drinkService.getAllDrinks() 
+      setDrinks(drinkData)
+    }
+    fetchDrinks()
+  },[])
 
 
   return (
