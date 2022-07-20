@@ -30,10 +30,7 @@ const AddSong = () => {
         ? <>
             <img src={result.strTrackThumb} alt={`${result.strTrack} album cover`} />
             <p>{result.strTrack}: {result.strArtist} --- {result.strAlbum}</p>
-            {/* <form onSubmit={handleClick}>
-              <input type="hidden" name="song" value={result}/>
-            </form> */}
-              <button onClick={() => songService.addBoozyTune(result)}>Add</button>
+            <button onClick={() => songService.addBoozyTune(result)}>Add</button>
           </>
         : display()
       }

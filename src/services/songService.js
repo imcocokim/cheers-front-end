@@ -12,10 +12,11 @@ async function searchSongs(artist, song) {
 
 async function addBoozyTune(song) {
   console.log('SONG DATA', song)
+  const obj = {img: song.strTrackThumb, name: song.strTrack, artist: song.strArtist, genre: song.strGenre}
   const res = await fetch(BASE_URL, {
     method: 'POST',
-    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
-    body: song.data
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(obj)
   })
   return await res.json()
 }
