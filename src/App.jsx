@@ -44,11 +44,7 @@ const App = () => {
     setUserProfile({...profileData, updatedProfile})
     navigate('/')
   }
-  const handleUpdatePhoto = async (photoData, profileId) => {
-    const updatedPhoto = await profileService.updatePhoto(photoData, profileId)
-    setUserProfile({...photoData, updatedPhoto})
-    navigate('/')
-  }
+
 
   return (
     <>
@@ -77,7 +73,7 @@ const App = () => {
         />
         <Route
           path="/edit-profile"
-          element={<EditProfile user={user} drinks={drinks} handleUpdateProfile={handleUpdateProfile} handleUpdatePhoto={handleUpdatePhoto}/>}
+          element={<EditProfile user={user} drinks={drinks} handleUpdateProfile={handleUpdateProfile}/>}
         />
         <Route
           path="/add-song"
