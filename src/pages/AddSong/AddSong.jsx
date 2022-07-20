@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchSongForm from "../../components/SearchSongForm/SearchSongFrom";
-import * as songService from '../../services/songService'
 
 const AddSong = () => {
   const navigate = useNavigate()
@@ -15,11 +14,6 @@ const AddSong = () => {
     )
   }
 
-  // const handleClick = async (event) => {
-  //   event.preventDefault()
-  //   const data = await songService.searchSongs(result)
-  // }
-
   return (
     <>
       <h1>Add a Song</h1>
@@ -30,7 +24,10 @@ const AddSong = () => {
         ? <>
             <img src={result.strTrackThumb} alt={`${result.strTrack} album cover`} />
             <p>{result.strTrack}: {result.strArtist} --- {result.strAlbum}</p>
-            <button onClick={() => songService.addBoozyTune(result)}>Add</button>
+            <Link to='/add-boozy-tune' state={result}>
+              <button>Add</button>
+            </Link>
+            {/* <button onClick={() => songService.addBoozyTune(result)}>Add</button> */}
           </>
         : display()
       }
