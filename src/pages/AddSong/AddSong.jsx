@@ -15,10 +15,6 @@ const AddSong = () => {
     )
   }
 
-  const addSongData = () => {
-    console.log(result)
-  }
-
   return (
     <>
       <h1>Add a Song</h1>
@@ -30,7 +26,7 @@ const AddSong = () => {
             <img src={result.strTrackThumb} alt={`${result.strTrack} album cover`} />
             <p>{result.strTrack}: {result.strArtist} --- {result.strAlbum}</p>
             {/* <Link to='/add-boozy-tune' state={result}> */}
-              <button onClick={addSongData}>Add</button>
+              <button onClick={() => songService.addSong(result)}>Add</button>
             {/* </Link> */}
           </>
         : display()

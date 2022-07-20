@@ -23,7 +23,7 @@ const AddBoozyTune = () => {
         <h3>{track.strGenre}</h3>
         <button onClick={() => navigate('/add-song')}>Cancel</button><br />
         <DrinkDropdown onChange={handleDrinkChange}/><br />
-        <input type="text" /><br />
+        <input type="text"/><br />
         <button type='submit'>Add Boozy Tune</button>
       </form>
     </>
