@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
 const Profile = ({user, profile}) => {
-  const [userProfile, setUserProfile] = useState()
+  console.log(profile.favoriteDrink)
   return ( 
     <>
       <div className='all-profiles'>
@@ -25,8 +25,8 @@ const Profile = ({user, profile}) => {
               </Link>
             </>
           }
-          <p className='card-text'>{profile.favoriteSong}</p>
-          <p className='card-text'>{profile.favoriteDrink}</p>
+          <p className='card-text'>Favorite Song: {profile.favoriteSong}</p>
+          <p className='card-text'>Favorite Drink: {profile.favoriteDrink}</p>
         </div>
       </div>
     </>
