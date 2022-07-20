@@ -1,0 +1,17 @@
+h1, h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+h2{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.cbtn {
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+}

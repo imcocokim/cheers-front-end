@@ -1,31 +1,38 @@
-
 .navbar { 
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: flex-end;
     align-items: baseline;
     flex-wrap: wrap;
     align-content: stretch;
     list-style-type: none;
     padding: 0 20px ;
-    background: rgb(157, 158, 156);
+    background: rgb(108, 166, 208);
     height: 10vh;
   }
   
+  .welc {
+    display: flex;
+    justify-content: left;
+  }
   .navitems {
   
     display: flex;
-    padding: 10px, 90px, 10px ;
-    justify-content: flex-end;
+    /* padding: 10px, 90px, 10px ; */
+    /* justify-content: flex-end; */
     flex-direction: row;
-    flex-wrap: wrap;
-   }
+    justify-content: right;
+  } 
   
-   .navul {
-  
+  .navul {
     display: flex;
-    padding: 0 30px;
-    justify-content: flex-end;
+    justify-content: right;
     flex-direction: row;
-    flex-wrap: nowrap;
-   }
+    border-radius: 5px;
+    font-size: 20px;
+    color: black;
+    /* padding: 0 30px; */
+    background-color: rgb(252, 253, 255);
+    /* margin-left: 10px; */
+    
+  }

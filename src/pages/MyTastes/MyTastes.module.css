@@ -1,0 +1,10 @@
+.bt {
+  display: flex;
+  justify-content: center;
+}
+
+.dd {
+  display: flex;
+  justify-content: center;
+  color: aqua;
+}
