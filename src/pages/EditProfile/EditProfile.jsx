@@ -9,7 +9,6 @@ const EditProfile = props => {
   const navigate = useNavigate()
   const location = useLocation()
   const [formData, setFormData] = useState(location.state.profile)
-  const [photoData, setPhotoData] = useState({})
 
   const handleChange = e => {
     setFormData({
@@ -17,19 +16,12 @@ const EditProfile = props => {
       [e.target.name]: e.target.value,
     })
   }
-
-  
-  const handleChangePhoto = (evt) => {
-    setPhotoData({ photo: evt.target.files[0] })
-  }
   
   const handleSubmit = async e => {
     e.preventDefault()
     try {
       props.handleUpdateProfile(formData)
-      props.handleUpdatePhoto(photoData.photo)
-      navigate(-1)
-      console.log(formData, "FORM DATA*******", photoData.photo)
+      navigate('/')
     } catch (err) {
       console.log(err)
     }
@@ -44,17 +36,6 @@ const EditProfile = props => {
         onSubmit={handleSubmit}
         className={styles.container}
       >
-        <div className={styles.inputContainer}>
-          <label htmlFor="photo-upload" className={styles.label}>
-            Upload New Photo
-          </label>
-          <input
-            type="file"
-            id="photo-upload"
-            name="photo"
-            onChange={handleChangePhoto}
-          />
-        </div>
         <div className={styles.inputContainer}>
           <label htmlFor="name" className={styles.label}>Name:</label>
           <input
