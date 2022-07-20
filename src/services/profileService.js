@@ -32,21 +32,8 @@ async function updateProfile(profileData) {
   return await res.json()
 }
 
-async function addBoozyTune(boozyTune) {
-  console.log('SONG DATA', boozyTune)
-  console.log(boozyTune)
-  const obj = {}
-  const res = await fetch(BASE_URL, {
-    method: 'POST',
-    headers: { 'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(obj)
-  })
-  return await res.json()
-}
-
 export { 
   getAllProfiles, 
   addPhoto,
-  updateProfile,
-  addBoozyTune
+  updateProfile
 }

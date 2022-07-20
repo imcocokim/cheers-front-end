@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import DrinkDropdown from '../../components/DrinkDropdown/DrinkDropdown'
-import * as profileService from '../../services/profileService'
-
+import * as boozyTuneService from '../../services/boozyTuneService'
 const AddBoozyTune = (props) => {
   const navigate = useNavigate()
   const location = useLocation()
@@ -10,41 +9,38 @@ const AddBoozyTune = (props) => {
   const track = location.state
 
   const [selectedDrink, setSelectedDrink] = useState()
-  const [boozyTuneSong, setBoozyTuneSong] = useState({
-    img: track.strTrackThumb,
-    name: track.strTrack,
-    artist: track.strArtist,
-    genre: track.strGenre
-  })
-  const [boozyTune, setBoozyTune] = useState({
-    song: boozyTuneSong,
-    pairedDrink: selectedDrink,
-    comment: '',
-    author: props.userProfile
-  })
+  const [comment, setComment] = useState('')
 
   const handleChange = evt => {
-		setBoozyTune({ ...boozyTune, [evt.target.name]: evt.target.value })
+		setComment( evt.target.value )
   }
 
   const handleDrinkChange = (event) => {
     setSelectedDrink(event.target.value)
   }
 
-  const handleSubmit = event => {
-    navigate('/my-page')
-    profileService.addBoozyTune(boozyTune)
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const obj = {
+      song: track._id,
+      pairedDrink: selectedDrink,
+      comment: comment,
+      author: props.userProfile
+    }
+    await boozyTuneService.addBoozyTune(obj)
+    navigate('/')
   }
-  console.log(boozyTune)
+  console.log(comment)
+  console.log(selectedDrink)
   return (
     <>
       <form autoComplete='off' onSubmit={handleSubmit}>
-        <h1>{track.strTrack}</h1>
-        <h3>{track.strArtist}</h3>
-        <h3>{track.strGenre}</h3>
+        <h1>{track.name}</h1>
+        <h3>{track.artist}</h3>
+        <h3>{track.genre}</h3>
         <button onClick={() => navigate('/add-song')}>Cancel</button><br />
         <DrinkDropdown drinks={props.drinks} onChange={handleDrinkChange}/><br />
-        <input type="text" name='comment' value={boozyTune.comment} onChange={handleChange}/><br />
+        <input type="text" name='comment' value={comment} onChange={handleChange}/><br />
         <button type='submit'>Add Boozy Tune</button>
       </form>
     </>
