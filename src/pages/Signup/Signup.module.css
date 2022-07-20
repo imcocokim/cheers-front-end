@@ -1,6 +1,7 @@
-body {
-  background: url(../../components/images/tikieva_event-_e15F3ZU-G4-unsplash.jpg);
-  background-size: cover;
+ body {
+  /* background: url(../../components/images/tikieva_event-_e15F3ZU-G4-unsplash.jpg); */
+  /* background-size: cover;  */
+  background-color: black;
 }
 
 .container {
