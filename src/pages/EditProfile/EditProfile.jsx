@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from '../../components/SignupForm/SignupForm.module.css'
 import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown"
-
+import SongDropdown from '../../components/SongDropdown/SongDropdown'
 
 
 const EditProfile = props => {  
@@ -21,8 +21,6 @@ const EditProfile = props => {
     e.preventDefault()
     try {
       props.handleUpdateProfile(formData)
-      navigate(-1)
-      console.log(formData, "FORM DATA*******")
     } catch (err) {
       console.log(err)
     }
@@ -50,18 +48,11 @@ const EditProfile = props => {
         </div>
         <div className={styles.inputContainer}>
           <label htmlFor="favorite-song" className={styles.label}>Favorite Song:</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="favoriteSong"
-            value={formData.favoriteSong ? formData.favoriteSong : ""}
-            name="favoriteSong"
-            onChange={handleChange}
-          />
+          <SongDropdown songs={props.songs} onChange={handleChange} />
         </div>
         <div className={styles.inputContainer}>
           <label htmlFor="favorite-drink" className={styles.label}>Favorite Drink:</label>
-            <DrinkDropdown drinks={props.drinks} onChange={handleChange} />
+          <DrinkDropdown drinks={props.drinks} onChange={handleChange} />
         </div>
         <div className={styles.inputContainer}>
           <button disabled={isFormInvalid()} className={styles.button}>
