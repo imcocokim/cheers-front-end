@@ -30,8 +30,7 @@ const AddBoozyTune = (props) => {
     await boozyTuneService.addBoozyTune(obj)
     navigate('/')
   }
-  console.log(comment)
-  console.log(selectedDrink)
+  
   return (
     <>
       <form autoComplete='off' onSubmit={handleSubmit}>

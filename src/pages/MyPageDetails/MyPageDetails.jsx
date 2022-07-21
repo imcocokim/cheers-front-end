@@ -1,14 +1,22 @@
-import { useState } from 'react' 
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-// import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard';
+import { useState, useEffect } from 'react' 
+import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard'
+import * as boozyTuneService from '../../services/boozyTuneService'
 import styles from './MyPageDetails.module.css'
-
-
 
 const MyPageDetails = () => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state)
+  const [boozyTunes, setBoozyTunes] = useState([])
+
+  useEffect(() => {
+    const fetchAllBoozyTunes = async () => {
+      const boozyData = await boozyTuneService.getAllBoozyTunes()
+      setBoozyTunes(boozyData)
+    }
+    fetchAllBoozyTunes()
+  }, [])
 
   return ( 
     profile &&
@@ -42,11 +50,11 @@ const MyPageDetails = () => {
         }
       </p>
       <h2>My Boozy Tunes</h2>
-      
+
       <div>
-        {/* <BoozyTuneCard  */}
-  
-        {/* /> */}
+        {boozyTunes.map((boozyTune, idx) =>
+          <BoozyTuneCard boozyTune={boozyTune} key={idx}/>
+        )}
       </div>
       
     </div>
