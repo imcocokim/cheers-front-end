@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import * as boozyTuneGameService from "../../services/boozyTuneGameService"
 import * as boozyTuneService from "../../services/boozyTuneService"
 import styles from './BoozyTunesGame.module.css'
 
 function BoozyTunesGame() {
-  const [songData, setSongData] = useState();
-  const [drinkData, setDrinkData] = useState();
-  const [msg, setMsg] = useState();
-  const [submitted, setSubmitted] = useState(false);
+  const [songData, setSongData] = useState()
+  const [drinkData, setDrinkData] = useState()
+  const [msg, setMsg] = useState()
+  const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = async () => {
     const boozyTune = await boozyTuneService.addBoozyTune({song:songData._id, pairedDrink:drinkData._id})
@@ -26,13 +26,11 @@ function BoozyTunesGame() {
   useEffect(() => {
     const fetchRandomDrinkAndSong = async () => {
       const res = await boozyTuneGameService.getRandomDrinkAndSong()
-      console.log(res)
       setSongData(res.randomSong)
       setDrinkData(res.randomDrink)
-    };
-    fetchRandomDrinkAndSong();
-  }, [submitted]);
-  console.log(songData, drinkData)
+    }
+    fetchRandomDrinkAndSong()
+  }, [submitted])
 
   const displayRandomPair = () => {
     return (
@@ -65,4 +63,4 @@ const displayMsg = () => {
   )
 }
 
-export default BoozyTunesGame;
+export default BoozyTunesGame

@@ -3,7 +3,6 @@ import styles from './NavBar.module.css'
 import logo from './CHEERS-logo.png'
 
 const NavBar = ({ user, userProfile, handleLogout }) => {
-  console.log(logo);
   return (
     <>
       {user ?
