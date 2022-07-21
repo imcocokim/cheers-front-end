@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as boozyTuneGameService from "../../services/boozyTuneGameService"
 import * as boozyTuneService from "../../services/boozyTuneService"
+import styles from './BoozyTunesGame.module.css'
 
 function BoozyTunesGame() {
   const [songData, setSongData] = useState();
@@ -53,14 +54,14 @@ const displayMsg = () => {
 }
 
   return ( 
-    <>
+    <div className={styles.bzcnt}>
       <h1>Boozy Tunes</h1>
       <h2> Boozy Tunes Results</h2>
       {msg 
         ? displayMsg()
         : displayRandomPair()
       }
-    </>
+    </div>
   )
 }
 

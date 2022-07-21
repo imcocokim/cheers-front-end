@@ -1,7 +1,8 @@
 .mpd {
-  width: 300px;
+  background-color: rgba(82, 78, 78, 0.65);
+  width: 600px;
+  border-radius: 20px;
   padding: 60px;
-  background-color: gray;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -13,7 +14,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  background-color: rgb(48, 52, 60);
   color: white;
   border-radius: 2px;
 }
@@ -22,4 +23,10 @@
   color: white;
   display: flex;
   justify-content: center;
+}
+.profilePhoto{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: white;
 }

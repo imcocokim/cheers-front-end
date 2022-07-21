@@ -28,7 +28,7 @@ const MyPageDetails = (props) => {
     <div className={styles.profilePhoto}>
       <img src={profile.photo}
           alt={profile.name}
-          className="profile-photo"
+          className={styles.profilePhoto}
           style={{width:"270px", height:"270px"}}
         />
       <h1>{profile.name}</h1> 
