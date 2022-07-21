@@ -25,7 +25,7 @@ const MyPageDetails = (props) => {
 
   return ( 
     profile &&
-    <div className={styles.mpd}>
+    <div className={styles.profilePhoto}>
       <img src={profile.photo}
           alt={profile.name}
           className="profile-photo"
@@ -55,7 +55,6 @@ const MyPageDetails = (props) => {
         }
       </p>
       <h2>My Boozy Tunes</h2>
-
       <div>
         {boozyTunes?.map((boozyTune, idx) =>
           <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={props.user} handleDeleteBzyTn={handleDeleteBzyTn}/>
