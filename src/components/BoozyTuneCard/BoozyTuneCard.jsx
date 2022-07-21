@@ -13,6 +13,7 @@ const BoozyTuneCard = ({boozyTune}) => {
       <p>{boozyTune.song.name}</p>
       <p>{boozyTune.song.artist}</p>
       <p>{boozyTune.pairedDrink.name} {boozyTune.pairedDrink.category}</p>
+      <p>{boozyTune.comment}</p>
       <Link
         to="/edit"
         className='btn ed'

@@ -11,11 +11,12 @@ const MyPageDetails = () => {
 
   useEffect(() => {
     const fetchAllBoozyTunes = async () => {
-      const boozyData = await boozyTuneService.getAllBoozyTunes()
+      const boozyData = await boozyTuneService.getAllBoozyTunes(profile._id)
       setBoozyTunes(boozyData)
     }
     fetchAllBoozyTunes()
-  }, [])
+  }, [profile._id])
+  console.log(boozyTunes)
 
   return ( 
     profile &&
@@ -50,7 +51,7 @@ const MyPageDetails = () => {
       <h2>My Boozy Tunes</h2>
 
       <div>
-        {boozyTunes.map((boozyTune, idx) =>
+        {boozyTunes?.map((boozyTune, idx) =>
           <BoozyTuneCard boozyTune={boozyTune} key={idx}/>
         )}
       </div>

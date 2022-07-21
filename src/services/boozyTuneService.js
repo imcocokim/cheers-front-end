@@ -11,12 +11,11 @@ async function addBoozyTune(boozyTune) {
   return await res.json()
 }
 
-async function getAllBoozyTunes() {
-  const res = await fetch(BASE_URL, {
+async function getAllBoozyTunes(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}`, {
     headers: { 'Authorization': `Bearer ${tokenService.getToken()}`
     }
   })
-
   return res.json()
 }
 
