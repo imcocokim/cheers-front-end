@@ -16,7 +16,11 @@ const MyPageDetails = (props) => {
     }
     fetchAllBoozyTunes()
   }, [profile._id])
-  console.log(boozyTunes)
+
+  const handleDeleteBzyTn = async (id) => {
+    const deletedBzyTn = await boozyTuneService.deleteBoozyTune(id)
+    setBoozyTunes(boozyTunes.filter(boozyTune => boozyTune._id !== deletedBzyTn._id))
+  }
 
   return ( 
     profile &&
@@ -52,7 +56,7 @@ const MyPageDetails = (props) => {
 
       <div>
         {boozyTunes?.map((boozyTune, idx) =>
-          <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={props.user}/>
+          <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={props.user} handleDeleteBzyTn={handleDeleteBzyTn}/>
         )}
       </div>
       

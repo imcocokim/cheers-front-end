@@ -20,7 +20,7 @@ async function editBoozyTune(obj, boozyId) {
   return await res.json()
 }
 
-async function deleteBoozyTune(obj, boozyId) {
+async function deleteBoozyTune(boozyId) {
   const res = await fetch(`${BASE_URL}/${boozyId}`, {
     method: 'DELETE',
     headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
@@ -39,5 +39,6 @@ async function getAllBoozyTunes(profileId) {
 export {
   addBoozyTune,
   editBoozyTune,
+  deleteBoozyTune,
   getAllBoozyTunes
 }
