@@ -1,0 +1,19 @@
+.wel {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.par {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.act {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
