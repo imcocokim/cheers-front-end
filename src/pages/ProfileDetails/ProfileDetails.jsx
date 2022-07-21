@@ -1,12 +1,23 @@
-import { useState } from 'react' 
+import { useEffect, useState } from 'react' 
 import { useLocation } from 'react-router-dom'
+import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard'
+import * as boozyTuneService from '../../services/boozyTuneService'
 
 
 const ProfileDetails = ({user}) => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state.profile)
+  const [boozyTunes, setBoozyTunes] = useState(profile.boozyTunes)
 
-  return ( 
+  useEffect(() => {
+    const fetchAllBoozyTunes = async () => {
+      const boozyData = await boozyTuneService.getAllBoozyTunes()
+      setBoozyTunes(boozyData)
+    }
+    fetchAllBoozyTunes()
+  }, [])
+
+  return (
     <>
       <img src={profile.photo}
         alt={profile.name}
@@ -28,7 +39,9 @@ const ProfileDetails = ({user}) => {
       </p>
       <h2>{profile.name}'s Boozy Tunes</h2>
       <div>
-        song/drink card goes here
+        {profile.boozyTunes.map(boozyTune =>
+          <BoozyTuneCard boozyTune={boozyTune}/>
+        )}
       </div>
     </>
   )
