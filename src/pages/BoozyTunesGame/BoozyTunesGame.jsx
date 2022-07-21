@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
 import * as boozyTuneGameService from "../../services/boozyTuneGameService"
 
-
 function BoozyTunesGame() {
   const [songData, setSongData] = useState();
   const [drinkData, setDrinkData] = useState();
-
 
   useEffect(() => {
     const fetchRandomDrinkAndSong = async () => {
       const res = await boozyTuneGameService.getRandomDrinkAndSong()
       console.log(res)
-      // console.log(res.randomSong)
-      // console.log(res.randomDrink)
-      
       setSongData(res.randomSong)
       setDrinkData(res.randomDrink)
     };
