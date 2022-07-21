@@ -1,7 +1,9 @@
 import { useState } from 'react' 
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import boozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard';
+// import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard';
+import styles from './MyPageDetails.module.css'
+
 
 
 const MyPageDetails = () => {
@@ -10,29 +12,30 @@ const MyPageDetails = () => {
 
   return ( 
     profile &&
-    <>
+    <div className={styles.mpd}>
       <img src={profile.photo}
           alt={profile.name}
           className="profile-photo"
-          style={{width:"300px"}}
+          style={{width:"270px", height:"270px"}}
         />
       <h1>{profile.name}</h1> 
-      <Link
+      <button className={styles.lin}><Link
         className='button'
         to='/edit-profile'
         state={{profile}}
       >
         Edit
-      </Link>
+      </Link></button>
+      <br />
       
-      <Link to="/changePassword">Change Password</Link>
-      <p>
+      <button className={styles.lin}><Link to="/changePassword">Change Password</Link></button>
+      <p className={styles.fav}>
         {profile.favoriteSong
           ? `Favorite Song: ${profile.favoriteSong?.name} by ${profile.favoriteSong?.artist}`
           : 'Add your favorite song by clicking edit!'  
         }
       </p>
-      <p>
+      <p className={styles.fav}>
         {profile.favoriteDrink
           ? `Favorite Drink: ${profile.favoriteDrink?.name} ${profile.favoriteDrink?.category}`
           : 'Add your favorite drink by clicking edit!'  
@@ -41,12 +44,12 @@ const MyPageDetails = () => {
       <h2>My Boozy Tunes</h2>
       
       <div>
-        <boozyTuneCard 
+        {/* <BoozyTuneCard  */}
   
-        />
+        {/* /> */}
       </div>
       
-    </>
+    </div>
   );
 }
 

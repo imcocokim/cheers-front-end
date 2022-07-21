@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { searchSongs } from "../../services/songService"
+import styles from './SearchSongForm.module.css'
+
 
 const SearchSongForm = (props) => {
   const [artist, setArtist] = useState('')
@@ -17,7 +19,7 @@ const SearchSongForm = (props) => {
 
   return (
     <>
-      <div>
+      <div className={styles.src}>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -37,7 +39,9 @@ const SearchSongForm = (props) => {
             value={song}
             onChange={(e) => setSong(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <br />
+          <br />
+          <button className={styles.sub} type="submit">Search</button>
         </form>
       </div>
     </>

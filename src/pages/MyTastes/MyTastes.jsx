@@ -11,14 +11,16 @@ const MyTastes = ({drinks, userProfile}) => {
   console.log(typeof(userProfile))
   console.log(userProfile)
   return ( 
-    <>
-      <DrinkDropdown className={styles.dd} drinks={drinks} onChange={handleDrinkChange} />
+    <div className={styles.dd}>
+      <DrinkDropdown drinks={drinks} onChange={handleDrinkChange} />
+      <br />
+      <br />
       {userProfile?.boozyTunes ?
         <h1 className={styles.bt}>These are the boozy tunes</h1>
       :
         <h1>You don't have any boozy tunes!</h1>
       }
-    </>
+    </div>
   )
 }
 

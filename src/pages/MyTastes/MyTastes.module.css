@@ -4,7 +4,15 @@
 }
 
 .dd {
-  display: flex;
-  justify-content: center;
-  color: aqua;
+  background-color: rgb(22, 26, 30);
+  color: white;
+  border-radius: 5px;
+  width: 400px;
+  padding: 60px;
+  background-color: gray;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 70px;
 }

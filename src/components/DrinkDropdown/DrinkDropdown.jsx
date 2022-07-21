@@ -1,7 +1,9 @@
+import styles from './DrinkDropdown.module.css'
+
 const DrinkDropdown = (props) => {
   return ( 
     props.drinks.length &&
-    <select onChange={props.onChange} name="favoriteDrink">
+    <select className={styles.sel} onChange={props.onChange} name="favoriteDrink">
       <option></option>
       <option disabled>WINE</option>
       {props.drinks.map((drink, idx) => (
