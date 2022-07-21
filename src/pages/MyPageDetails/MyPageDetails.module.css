@@ -1,32 +1,38 @@
-.mpd {
-  background-color: rgba(82, 78, 78, 0.65);
-  width: 600px;
-  border-radius: 20px;
-  padding: 60px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: 70px;
+.boozyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
 }
 
-.lin {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(48, 52, 60);
-  color: white;
-  border-radius: 2px;
-}
-
-.fav {
-  color: white;
+.profilePhoto {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
-.profilePhoto{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-color: white;
+
+p {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.favorites {
+  color: white;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  padding: 10px;
+  background-color: rgba(82, 78, 78, 0.65);
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  margin: 5px auto 10px auto;
+  color: whitesmoke;
 }

@@ -37,9 +37,11 @@ const BoozyTuneCard = ({boozyTune, profile, user, handleDeleteBzyTn}) => {
         {user.profile === profile._id ?
           <>
             <Link to="/edit-boozy-tune" state={boozyTune}>
-              Edit
+              <button className={styles.buttons}>
+                Edit
+              </button>
             </Link>
-            <button onClick={() => handleDeleteBzyTn(boozyTune._id)}>
+            <button className={styles.buttons} onClick={() => handleDeleteBzyTn(boozyTune._id)}>
               Delete
             </button>
           </>
