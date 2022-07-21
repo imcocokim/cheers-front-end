@@ -24,3 +24,12 @@
   border: solid 2px whitesmoke;
   border-radius: 20px;
 }
+
+.buttons {
+  padding: 10px;
+  background-color: rgba(82, 78, 78, 0.65);
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  margin: 5px auto 10px auto;
+  color: whitesmoke;
+}
