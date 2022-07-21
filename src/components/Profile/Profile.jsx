@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
+import styles from './Profile.module.css'
 
 
 const Profile = ({user, profile}) => {
@@ -8,7 +9,7 @@ const Profile = ({user, profile}) => {
       <div className='all-profiles'>
         <img src={profile.photo}
           alt={profile.name}
-          // className={styles.cardPhoto}
+          className={styles.cardPhoto}
           style={{width:"135px", height:"135px"}}
         />
         <div className='card-body'>
