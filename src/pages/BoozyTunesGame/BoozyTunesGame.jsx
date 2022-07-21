@@ -36,7 +36,7 @@ function BoozyTunesGame() {
   const displayRandomPair = () => {
     return (
       <>
-        <p>{drinkData?.name}</p><p>{songData?.name}</p>
+        <p>{drinkData?.name} {drinkData?.category}</p><p>{songData?.name} by {songData?.artist}</p>
         <button onClick={handleSubmit}>Create Boozy Tune?</button> 
         <button onClick={handleReset} >Skip</button>
       </>
