@@ -1,0 +1,26 @@
+.card {
+  background-color: rgba(82, 78, 78, 0.65);
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 4px whitesmoke;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.cardContent{
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.cardContent > img {
+  width: 20vw;
+  border: solid 2px whitesmoke;
+  border-radius: 20px;
+}

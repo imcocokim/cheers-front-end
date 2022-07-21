@@ -1,0 +1,17 @@
+.boozyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
+}
+
+.profilePhoto {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+p {
+  color: whitesmoke;
+  text-align: center;
+}
