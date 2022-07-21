@@ -18,8 +18,9 @@ const Profiles = ({user}) => {
   return (
     <>
       <h1 className={styles.prof}>Profiles</h1>
+      <div className={styles.cardContainer}>
       {profiles.length ? 
-        <div className={styles.cards}>
+        <div className={styles.card}>
           {profiles.map((profile) =>
             <Profile profile={profile} user={user} key={profile._id}/>
           )}
@@ -27,6 +28,7 @@ const Profiles = ({user}) => {
       :
         <p>No profiles yet</p>
       }
+      </div>
     </>
   )
 }
