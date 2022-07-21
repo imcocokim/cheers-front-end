@@ -1,6 +1,5 @@
 header {
-  background-color:#262626;
-  opacity: .9;
+  background-color: rgba(82, 78, 78, 0.65);
   padding: 15px;
   box-shadow: 0 0 3px #000;
 }
@@ -44,9 +43,14 @@ h1 .cheers {
     opacity: 1;
   }
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 .navul {
   display: flex;
   text-align: center;
+  text-decoration: none;
   display: inline;
   margin-left: 45px;
   color: white;
@@ -70,4 +74,8 @@ hr {
 header li Link {
   /* color: white; */
   text-decoration: none;
+}
+.logo {
+  width: 20%;
+  color: #fff000;
 }
