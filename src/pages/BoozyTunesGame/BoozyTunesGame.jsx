@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 import * as boozyTuneGameService from "../../services/boozyTuneGameService"
 
-function BoozyTunesGame() {
+const CastYourVoteForm = (props) => {
+  const [artist, setArtist] = useState('')
+  const [song, setSong] = useState('')
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    // const data = await castYourVote()
+  }
+
+// function BoozyTunesGame() {
   const [songData, setSongData] = useState();
   const [drinkData, setDrinkData] = useState();
 
@@ -24,8 +33,12 @@ return (
   <p>This list of drinks</p>
        <p>{drinkData?.name}</p>    
        <p>{songData?.name}</p>
+       <form>
+      <button onClick={handleSubmit} name="Yes">Yes</button> <button onClick={handleSubmit} name="No">No</button>
+      
+       </form>
        </>
 )
-  }
-
-  export default BoozyTunesGame;
+  // }
+}
+  export default CastYourVoteForm;

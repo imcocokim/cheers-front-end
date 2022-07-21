@@ -1,68 +1,54 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
+CHEERS!🍻 🎶
+Come, grab a chair and share your thoughts on some of your favorite (or least favorite) drinks and music! No idea where to start? We got you! Inside, you'll be presented with the oppurtunity to pick Here, mix, match, and discover your favorite pairs of drinks/music. The vibes are yours to make! If your looking for something new, you can visit other peoples pages as well to get some ideas! Chill, kick ya feet up and vibeee awayy! Have Fun!!
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
+What are you waiting for? Come see for yourself! (Click link below)
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
 
-Use this to go build things! 🚀
+🟢 
 
-## To Use This Template
+Screenshot(Preview) 
 
-**Replace `<name-of-your-app-here>` in the commands below with the name of your app!**
+Wanna See behind the scenes? Heres the process below🚧
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-```
+🟢Getting Started  
 
-Once you are in the project directory:
 
-```bash
-rm -rf .git
-```
+🟢Github
+ Front End  
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+ https://github.com/Recipra/cheers-front-end
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+ Back End  
 
-Re-initialize a git repository:
+ https://github.com/Savienne/cheers-back-end
 
-```bash
-git init
-```
 
-Use the GitHub CLI to create a new public project repository on GitHub and add a remote named origin for this repo:
+🟢Planning  
 
-```bash
-gh repo create <name-of-your-app-here>-front-end --public --source=. --remote=origin
-```
+https://trello.com/b/rgQGmaqS/cheers  
 
-Run `npm i` to fetch the template's dependencies:
+https://whimsical.com/cheers-McPc4UySsYLgaNQAbJjUeZ
 
-```bash
-npm i
-```
+Technologies Used 💻  
 
-touch a `.env` file:
+1.HTML
 
-```bash
-touch .env
-```
+2.CSS
 
-Fill it with the following:
+3.Javascript
 
-```
-REACT_APP_BACK_END_SERVER_URL=http://localhost:3001
-```
+4.MongoDB
 
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors. We are only using the front-end .env to create variables specific to the environment the application is running in.
+5.Node
 
-Delete this README.md, then make an initial commit:
+6.Google OAuth
 
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
+7.React
 
-You're done!
+
+Credits 🤝
+
+
+Ice Box (Future Items)
+Animations! Lots of Animations!
+Play Youtube videos from the app.
