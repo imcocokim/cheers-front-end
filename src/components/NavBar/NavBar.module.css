@@ -1,52 +1,36 @@
-/* .navbar {  */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: flex-end;
-    align-items: baseline;
-    flex-wrap: wrap;
-    align-content: stretch;
-    list-style-type: none;
-    padding: 0 20px ;
-    background: rgb(108, 166, 208);
-    height: 20vh;
-  } */
-  /* .cheers {
-    font-size: 30px;
-  } */
-  
-  /* .welc {
-    display: flex;
-    justify-content: left;
-  } */
-  /* .navitems { */
-  
-    /* display: flex; */
-    /* padding: 10px, 90px, 10px ; */
-    /* justify-content: flex-end; */
-    /* flex-direction: row; */
-    /* justify-content: right; */
-  /* }  */
-  
-  /* .navul {
-    display: flex; */
-    /* justify-content: right; */
-    /* flex-direction: row;
-    border-radius: 5px;
-    font-size: 20px;
-    color: black;
-  } */
-
 header {
   background: rgb(22, 26, 30); 
   opacity: .9;
   padding: 15px;
   box-shadow: 0 0 3px #000;
 }
-.cheers {
-  color: rgb(255, 255, 255);
-  font-family: 'Convergence', sans-serif;    
-  font-size: 35px;
-  text-shadow: #000 1px 1px 1px;
+h1 {
+  display: grid;
+  place-items: center;
+  height: 7vh;
+  font-family: 'Sigmar One', cursive;
+  text-align: center;
+}
+
+h1 .cheers {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #fffcde;
+  text-shadow: 0 0 0 transparent,
+              0 0 10px #fff000,
+              0 0 20px rgba(255, 238, 0, 0.625),
+              0 0 40px #fff000,
+              0 0 100px #fff000,
+              0 0 200px #fff000,
+              0 0 300px #fff000,
+              0 0 500px #fff000,
+              0 0 1000px #fff000;
+  animation: animate 3s infinite alternate;
+}
+@keyframes animate{
+  40%{
+    opacity:1;
+  }
 }
 .navul {
   display: flex;

@@ -7,7 +7,7 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
       {user ?
         <header className={styles.navbar}>
           {/* <ul> */}
-          <h1 className={styles.cheers}>CHEERS</h1>
+          <h1 className={styles.cheers} data-text="CHEERS">CHEERS</h1>
           <hr class="solid"/>
             <p className={styles.welc}>Welcome, {user.name}!</p>
             <li className={styles.navul}><Link to="/add-song">Add Tune</Link></li>
