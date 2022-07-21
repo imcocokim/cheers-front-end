@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from "react";
 import * as boozyTuneGameService from "../../services/boozyTuneGameService"
+import * as boozyTuneService from "../../services/boozyTuneService"
 
-const CastYourVoteForm = (props) => {
-  const [artist, setArtist] = useState('')
-  const [song, setSong] = useState('')
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    // const data = await castYourVote()
-  }
-
-// function BoozyTunesGame() {
+function BoozyTunesGame() {
   const [songData, setSongData] = useState();
   const [drinkData, setDrinkData] = useState();
+  const [msg, setMsg] = useState();
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async () => {
+    const boozyTune = await boozyTuneService.addBoozyTune({song:songData._id, pairedDrink:drinkData._id})
+    if (boozyTune.author){
+      setMsg('The Boozy Has Been Added To Your Profile!')
+    } else {
+      setMsg('Oh no! Something went wrong!')
+    }
+  }
+
+  const handleReset = () => {
+    setSubmitted(!submitted)
+    setMsg()
+  }
 
   useEffect(() => {
     const fetchRandomDrinkAndSong = async () => {
@@ -22,23 +30,38 @@ const CastYourVoteForm = (props) => {
       setDrinkData(res.randomDrink)
     };
     fetchRandomDrinkAndSong();
-  }, []);
+  }, [submitted]);
   console.log(songData, drinkData)
 
-return ( 
-  <>
-  <h1>Boozy Tunes</h1>
-  <h2> Boozy Tunes Results</h2>
-  <h3> 60% of users said YES, THIS SONG goes with THIS DRINK</h3>
-  <p>This list of drinks</p>
-       <p>{drinkData?.name}</p>    
-       <p>{songData?.name}</p>
-       <form>
-      <button onClick={handleSubmit} name="Yes">Yes</button> <button onClick={handleSubmit} name="No">No</button>
-      
-       </form>
-       </>
-)
-  // }
+  const displayRandomPair = () => {
+    return (
+      <>
+        <p>{drinkData?.name}</p><p>{songData?.name}</p>
+        <button onClick={handleSubmit}>Create Boozy Tune?</button> 
+        <button onClick={handleReset} >Skip</button>
+      </>
+    )
+  }
+
+const displayMsg = () => {
+  return(
+    <>
+      <h2>{msg}</h2>
+      <button onClick={handleReset}>Play Again?</button>
+    </>
+  )
 }
-  export default CastYourVoteForm;
+
+  return ( 
+    <>
+      <h1>Boozy Tunes</h1>
+      <h2> Boozy Tunes Results</h2>
+      {msg 
+        ? displayMsg()
+        : displayRandomPair()
+      }
+    </>
+  )
+}
+
+export default BoozyTunesGame;
