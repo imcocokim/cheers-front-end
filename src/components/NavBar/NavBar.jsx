@@ -17,7 +17,7 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
             <li className={styles.navul}><Link to="/boozy-tunes">Boozy Tunes</Link></li>
             <li className={styles.navul}><Link to="/profiles">Profiles</Link></li>
             <li className={styles.navul}><Link to="/my-page" state={userProfile}>My Page</Link></li>
-            <li className={styles.navul}><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
+            <li className={styles.navul}><Link to="" onClick={handleLogout}>Log Out</Link></li>
         </header>
       :
         <nav className={styles.navbar}>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard'
 import * as boozyTuneService from '../../services/boozyTuneService'
-
+import styles from './ProfileDetails.module.css'
 
 
 const ProfileDetails = ({user}) => {
@@ -21,11 +21,12 @@ const ProfileDetails = ({user}) => {
 
   return (
     <>
-      <img src={profile.photo}
-        alt={profile.name}
-        className="profile-photo"
-        style={{width:"300px"}}
-      />
+      <div className={styles.profilePhoto}>
+        <img src={profile.photo}
+          alt={profile.name}
+          style={{width:"300px"}}
+        />
+      </div>
       <h1>{profile.name}</h1> 
       <p>
         {profile.favoriteSong
@@ -40,7 +41,7 @@ const ProfileDetails = ({user}) => {
         }
       </p>
       <h2>{profile.name}'s Boozy Tunes</h2>
-      <div>
+      <div className={styles.boozyContainer}>
         {boozyTunes?.map((boozyTune, idx) =>
           <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={user}/>
         )}
