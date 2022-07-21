@@ -1,13 +1,18 @@
-.cards {
-  opacity: .9;
-  background-color: gray;
+.card {
   color: white;
+  padding: 20px;
+  border-radius: 200 px;
+  margin: 30px;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-content: space-around;
+  width: 100%;
+  justify-content: space-between;
+}
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
-.cardPhoto {
-  border-radius: 50%;
-}
