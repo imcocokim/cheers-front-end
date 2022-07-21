@@ -28,13 +28,13 @@ const ProfileDetails = ({user}) => {
         />
       </div>
       <h1>{profile.name}</h1> 
-      <p>
+      <p className={styles.favorites}>
         {profile.favoriteSong
           ? `Favorite Song: ${profile.favoriteSong?.name} by ${profile.favoriteSong?.artist}`
           : `${profile.name} did not add favorite song`  
         }
       </p>
-      <p>
+      <p className={styles.favorites}>
         {profile.favoriteDrink
           ? `Favorite Drink: ${profile.favoriteDrink?.name} ${profile.favoriteDrink?.category}`
           : `${profile.name} did not add favorite drink`    

@@ -1,0 +1,10 @@
+.cardPhoto {
+  border-radius: 50%;
+}
+.wrapper {
+  margin: 10px;
+  border: solid 2px white;
+  background-color: rgba(82, 78, 78, 0.65);
+  width: 30%;
+  border-radius: 20px;
+}
