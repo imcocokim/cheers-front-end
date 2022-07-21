@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import logo from './CHEERS-logo.png'
 
 const NavBar = ({ user, userProfile, handleLogout }) => {
+  console.log(logo);
   return (
     <>
       {user ?
         <header className={styles.navbar}>
           {/* <ul> */}
-          <h1 className={styles.cheers} data-text="CHEERS">CHEERS</h1>
+          <img className={styles.logo} src={logo} alt="CHEERS" />
           <hr class="solid"/>
             <p className={styles.welc}>Welcome, {user.name}!</p>
             <li className={styles.navul}><Link to="/add-song">Add Tune</Link></li>

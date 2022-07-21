@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
+
 const Profile = ({user, profile}) => {
   return ( 
     <>
       <div className='all-profiles'>
         <img src={profile.photo}
           alt={profile.name}
-          className="card-photo"
+          // className={styles.cardPhoto}
           style={{width:"135px", height:"135px"}}
         />
         <div className='card-body'>
