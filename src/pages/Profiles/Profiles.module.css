@@ -1,0 +1,13 @@
+.cards {
+  opacity: .9;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+img {
+  border-radius: 50%;
+}

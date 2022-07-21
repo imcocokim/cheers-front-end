@@ -4,6 +4,7 @@ import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard'
 import * as boozyTuneService from '../../services/boozyTuneService'
 
 
+
 const ProfileDetails = ({user}) => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state.profile)

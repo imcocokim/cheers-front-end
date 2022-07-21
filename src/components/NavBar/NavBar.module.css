@@ -1,0 +1,61 @@
+header {
+  background: rgb(22, 26, 30); 
+  opacity: .9;
+  padding: 15px;
+  box-shadow: 0 0 3px #000;
+}
+h1 {
+  display: grid;
+  place-items: center;
+  height: 7vh;
+  font-family: 'Sigmar One', cursive;
+  text-align: center;
+}
+
+h1 .cheers {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #fffcde;
+  text-shadow: 0 0 0 transparent,
+              0 0 10px #fff000,
+              0 0 20px rgba(255, 238, 0, 0.625),
+              0 0 40px #fff000,
+              0 0 100px #fff000,
+              0 0 200px #fff000,
+              0 0 300px #fff000,
+              0 0 500px #fff000,
+              0 0 1000px #fff000;
+  animation: animate 3s infinite alternate;
+}
+@keyframes animate{
+  40%{
+    opacity:1;
+  }
+}
+.navul {
+  display: flex;
+  text-align: center;
+  display: inline;
+  margin-left: 45px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Convergence', sans-serif;
+  /* font-family: 'Sigmar One', cursive; */
+}
+.welc {
+  color: white;
+  font-family: 'Convergence', sans-serif;
+
+}
+.navbar {
+  text-align: center;
+}
+hr {
+width: 1000%;
+ margin-left: auto;
+ margin-right: auto;
+}
+header li Link {
+  /* color: white; */
+  text-decoration: none;
+}
