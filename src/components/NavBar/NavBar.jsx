@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import logo from './CHEERS-logo.png'
 
 const NavBar = ({ user, userProfile, handleLogout }) => {
+  console.log(logo);
   return (
     <>
       {user ?
         <header className={styles.navbar}>
           <Link to='/'>
-          <h1 className={styles.cheers} data-text="CHEERS">CHEERS</h1>
+          <img className={styles.logo} src={logo} alt="CHEERS" />
           </Link>
           <hr class="solid"/>
             <p className={styles.welc}>Welcome, {user.name}!</p>
@@ -17,7 +19,6 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
             <li className={styles.navul}><Link to="/profiles">Profiles</Link></li>
             <li className={styles.navul}><Link to="/my-page" state={userProfile}>My Page</Link></li>
             <li className={styles.navul}><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-          {/* </ul> */}
         </header>
       :
         <nav className={styles.navbar}>
