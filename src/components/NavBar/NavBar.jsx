@@ -8,8 +8,9 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
     <>
       {user ?
         <header className={styles.navbar}>
-          {/* <ul> */}
+          <Link to='/'>
           <img className={styles.logo} src={logo} alt="CHEERS" />
+          </Link>
           <hr class="solid"/>
             <p className={styles.welc}>Welcome, {user.name}!</p>
             <li className={styles.navul}><Link to="/add-song">Add Tune</Link></li>
@@ -18,7 +19,6 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
             <li className={styles.navul}><Link to="/profiles">Profiles</Link></li>
             <li className={styles.navul}><Link to="/my-page" state={userProfile}>My Page</Link></li>
             <li className={styles.navul}><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-          {/* </ul> */}
         </header>
       :
         <nav className={styles.navbar}>
