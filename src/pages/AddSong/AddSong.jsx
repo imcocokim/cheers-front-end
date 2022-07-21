@@ -1,6 +1,7 @@
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import SearchSongForm from "../../components/SearchSongForm/SearchSongFrom"
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import SearchSongForm from "../../components/SearchSongForm/SearchSongForm";
+import styles from './AddSong.module.css'
 import * as songService from '../../services/songService'
 
 const AddSong = () => {
@@ -22,9 +23,10 @@ const AddSong = () => {
   }
 
   return (
-    <>
+    <div className={styles.addcn}>
       <h1>Add a Song</h1>
-      <button onClick={() => navigate(-1)}>Cancel</button>
+      <button className={styles.cbtn} onClick={() => navigate(-1)}>Cancel</button>
+      <br />
       <SearchSongForm setResult={setResult} />
       <h2>Search Result:</h2>
       {result 
@@ -35,7 +37,7 @@ const AddSong = () => {
           </>
         : display()
       }
-    </>
+    </div>
   );
 }
 

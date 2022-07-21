@@ -8,7 +8,7 @@ const Profile = ({user, profile}) => {
         <img src={profile.photo}
           alt={profile.name}
           className="card-photo"
-          style={{width:"150px"}}
+          style={{width:"135px", height:"135px"}}
         />
         <div className='card-body'>
           {user.profile === profile._id ?

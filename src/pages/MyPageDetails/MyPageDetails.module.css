@@ -1,0 +1,25 @@
+.mpd {
+  width: 300px;
+  padding: 60px;
+  background-color: gray;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 70px;
+}
+
+.lin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  color: white;
+  border-radius: 2px;
+}
+
+.fav {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
