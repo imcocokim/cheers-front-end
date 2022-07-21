@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-const BoozyTuneCard = ({boozyTune}) => {
-
+const BoozyTuneCard = ({boozyTune, profile, user, handleDeleteBzyTn}) => {
   return (
     <div className="card">
       <img 
@@ -13,18 +12,21 @@ const BoozyTuneCard = ({boozyTune}) => {
       <p>{boozyTune.song.name}</p>
       <p>{boozyTune.song.artist}</p>
       <p>{boozyTune.pairedDrink.name} {boozyTune.pairedDrink.category}</p>
-      <Link
-        to="/edit"
-        className='btn ed'
-      >
-        Edit
-      </Link>
-      <button 
-        className="btn del"
-        // onClick={()=> deleteSong (song._id)}
-      >
-        Delete
-      </button>
+      <p>{boozyTune.comment}</p>
+      {user.profile === profile._id ?
+        <>
+          <Link to="/edit-boozy-tune" state={boozyTune}>
+            Edit
+          </Link>
+          <button onClick={() => handleDeleteBzyTn(boozyTune._id)}>
+            Delete
+          </button>
+        </>
+        :
+        <>
+        <p></p>
+        </>
+      }
 
     </div>
   )

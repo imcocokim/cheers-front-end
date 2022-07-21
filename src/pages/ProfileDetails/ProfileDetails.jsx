@@ -8,15 +8,16 @@ import * as boozyTuneService from '../../services/boozyTuneService'
 const ProfileDetails = ({user}) => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state.profile)
-  const [boozyTunes, setBoozyTunes] = useState(profile.boozyTunes)
+  const [boozyTunes, setBoozyTunes] = useState([])
 
   useEffect(() => {
     const fetchAllBoozyTunes = async () => {
-      const boozyData = await boozyTuneService.getAllBoozyTunes()
+      const boozyData = await boozyTuneService.getAllBoozyTunes(profile._id)
       setBoozyTunes(boozyData)
     }
     fetchAllBoozyTunes()
-  }, [])
+  }, [profile._id])
+  console.log(boozyTunes)
 
   return (
     <>
@@ -40,8 +41,8 @@ const ProfileDetails = ({user}) => {
       </p>
       <h2>{profile.name}'s Boozy Tunes</h2>
       <div>
-        {profile.boozyTunes.map(boozyTune =>
-          <BoozyTuneCard boozyTune={boozyTune}/>
+        {boozyTunes?.map((boozyTune, idx) =>
+          <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={user}/>
         )}
       </div>
     </>

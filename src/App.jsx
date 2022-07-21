@@ -16,6 +16,7 @@ import MyPageDetails from './pages/MyPageDetails/MyPageDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
 import * as drinkService from './services/drinkService'
 import AddBoozyTune from './pages/AddBoozyTune/AddBoozyTune'
+import EditBoozyTune from './pages/EditBoozyTune/EditBoozyTune'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -102,6 +103,11 @@ const App = () => {
         <Route
           path="/add-boozy-tune"
           element={<AddBoozyTune drinks={drinks} userProfile={userProfile}/>}
+          user={user}
+        />
+        <Route
+          path="/edit-boozy-tune"
+          element={<EditBoozyTune drinks={drinks} userProfile={userProfile}/>}
           user={user}
         />
         <Route
