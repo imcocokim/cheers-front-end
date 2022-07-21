@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import BoozyTuneCard from '../../components/BoozyTuneCard/BoozyTuneCard'
 import * as boozyTuneService from '../../services/boozyTuneService'
 
-const MyPageDetails = () => {
+const MyPageDetails = (props) => {
   const location = useLocation()
   const [profile, setProfile] = useState(location.state)
   const [boozyTunes, setBoozyTunes] = useState([])
@@ -52,7 +52,7 @@ const MyPageDetails = () => {
 
       <div>
         {boozyTunes?.map((boozyTune, idx) =>
-          <BoozyTuneCard boozyTune={boozyTune} key={idx}/>
+          <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={props.user}/>
         )}
       </div>
       

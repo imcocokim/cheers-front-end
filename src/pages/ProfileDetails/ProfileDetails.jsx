@@ -41,7 +41,7 @@ const ProfileDetails = ({user}) => {
       <h2>{profile.name}'s Boozy Tunes</h2>
       <div>
         {boozyTunes?.map((boozyTune, idx) =>
-          <BoozyTuneCard boozyTune={boozyTune} key={idx}/>
+          <BoozyTuneCard boozyTune={boozyTune} key={idx} profile={profile} user={user}/>
         )}
       </div>
     </>
