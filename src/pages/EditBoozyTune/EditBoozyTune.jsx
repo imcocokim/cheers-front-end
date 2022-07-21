@@ -3,13 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import DrinkDropdown from '../../components/DrinkDropdown/DrinkDropdown'
 import * as boozyTuneService from '../../services/boozyTuneService'
 
-const AddBoozyTune = (props) => {
+const EditBoozyTune = (props) => {
   const navigate = useNavigate()
   const location = useLocation()
   const track = location.state
 
   const [selectedDrink, setSelectedDrink] = useState()
-  const [comment, setComment] = useState('')
+  const [comment, setComment] = useState(track.comment)
 
   const handleChange = evt => {
 		setComment( evt.target.value )
@@ -22,28 +22,27 @@ const AddBoozyTune = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const obj = {
-      song: track._id,
       pairedDrink: selectedDrink,
       comment: comment,
-      author: props.userProfile
     }
-    await boozyTuneService.addBoozyTune(obj)
-    navigate('/')
+    await boozyTuneService.editBoozyTune(obj, track._id)
+    navigate('/profiles')
   }
   
   return (
     <>
       <form autoComplete='off' onSubmit={handleSubmit}>
-        <h1>{track.name}</h1>
-        <h3>{track.artist}</h3>
-        <h3>{track.genre}</h3>
+        <img src={track.song.img} alt={`${track.song.name} album cover`}/>
+        <h1>{track.song.name}</h1>
+        <h3>{track.song.artist}</h3>
+        <h3>{track.song.genre}</h3>
         <button onClick={() => navigate('/add-song')}>Cancel</button><br />
         <DrinkDropdown drinks={props.drinks} onChange={handleDrinkChange}/><br />
         <input type="text" name='comment' value={comment} onChange={handleChange}/><br />
-        <button type='submit'>Add Boozy Tune</button>
+        <button type='submit'>Update Boozy Tune</button>
       </form>
     </>
   );
 }
 
-export default AddBoozyTune;
+export default EditBoozyTune;

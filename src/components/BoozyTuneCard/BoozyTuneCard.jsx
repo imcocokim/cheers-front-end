@@ -15,10 +15,7 @@ const BoozyTuneCard = ({boozyTune, profile, user}) => {
       <p>{boozyTune.comment}</p>
       {user.profile === profile._id ?
         <>
-          <Link
-            to="/edit"
-            className='btn ed'
-          >
+          <Link to="/edit-boozy-tune" state={boozyTune}>
             Edit
           </Link>
           <button 
