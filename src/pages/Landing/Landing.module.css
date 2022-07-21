@@ -20,9 +20,10 @@
 }
 
 .wcon {
-  background: url(../../../public/images/tikieva_event-_e15F3ZU-G4-unsplash.jpg);
-  background-size: cover; 
-  background-color: rgba();
+  /* background: url(../../../public/images/tikieva_event-_e15F3ZU-G4-unsplash.jpg);
+  background-size: cover;  */
+  background-color: rgba(82, 78, 78, 0.65);
+  border-radius: 20px;
   width: 70%;
   display: block;
   margin-left: auto;
