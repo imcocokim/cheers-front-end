@@ -27,7 +27,7 @@ const DrinkDropdown = (props) => {
         </option>
       ))} 
   </select>
-  );
+  )
 }
 
 export default DrinkDropdown;

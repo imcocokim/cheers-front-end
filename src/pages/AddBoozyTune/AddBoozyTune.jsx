@@ -28,7 +28,7 @@ const AddBoozyTune = (props) => {
       author: props.userProfile
     }
     await boozyTuneService.addBoozyTune(obj)
-    navigate('/')
+    navigate('/profiles')
   }
   
   return (

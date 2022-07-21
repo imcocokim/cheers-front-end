@@ -18,7 +18,6 @@ const AddSong = () => {
 
   const addSongToDb = async () => {
     const res = await songService.addSong(result)
-    console.log(res)
     navigate('/add-boozy-tune', {state: res})
   }
 

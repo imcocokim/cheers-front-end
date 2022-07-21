@@ -45,7 +45,7 @@ const SearchSongForm = (props) => {
         </form>
       </div>
     </>
-  );
+  )
 }
 
 export default SearchSongForm;

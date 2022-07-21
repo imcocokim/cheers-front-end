@@ -8,8 +8,7 @@ const MyTastes = ({drinks, userProfile}) => {
   const handleDrinkChange = (event) => {
     setSelectedDrink(event.target.value)
   }
-  console.log(typeof(userProfile))
-  console.log(userProfile)
+
   return ( 
     <div className={styles.dd}>
       <DrinkDropdown drinks={drinks} onChange={handleDrinkChange} />
