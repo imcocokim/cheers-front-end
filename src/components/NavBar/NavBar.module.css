@@ -11,41 +11,15 @@ h1 {
   text-align: center;
 }
 
-h1 .cheers {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: #fffcde;
-  text-shadow: 0 0 0 transparent,
-  0 0 10px #fff000,
-  0 0 20px rgba(255, 238, 0, 0.625),
-  0 0 40px #fff000,
-  0 0 100px #fff000,
-  0 0 200px #fff000,
-  0 0 300px #fff000,
-  0 0 500px #fff000,
-  0 0 1000px #fff000;
-  animation: animate 3s infinite alternate;
-}
-@keyframes animate{
-  40%{
-    opacity: 1;
-  }
-  42%{
-    opacity: 0.8;
-  }
-  43%{
-    opacity: 1;
-  }
-  45%{
-    opacity: 0.3;
-  }
-  46%{
-    opacity: 1;
-  }
-}
 a {
   text-decoration: none;
   color: white;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight:bolder;
+  font-size: 20px;
+}
+a:hover {
+  color: #e7ba73
 }
 .navul {
   display: flex;
@@ -56,11 +30,12 @@ a {
   color: white;
   font-size: 18px;
   font-family: 'Convergence', sans-serif;
-  /* font-family: 'Sigmar One', cursive; */
 }
 .welc {
   color: white;
   font-family: 'Convergence', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 25px;
 
 }
 .navbar {
@@ -71,11 +46,6 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
-header li Link {
-  /* color: white; */
-  text-decoration: none;
-}
 .logo {
   width: 20%;
-  color: #fff000;
 }
