@@ -1,4 +1,4 @@
- body {
+body {
   background: url(../../../public/images/tikieva_event-_e15F3ZU-G4-unsplash.jpg);
   background-size: cover; 
   background-attachment: fixed;
@@ -11,4 +11,8 @@
   flex-direction: column;
 }
 
-
+button {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
