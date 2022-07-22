@@ -29,11 +29,6 @@ Users are able to:
 
 ### Website Preview
 ![Landing Page](./public/images/CHEERS-landing.png)
-![Boozy Tune Game](./public/images/CHEERS-btg.png)
-![Dispay Boozy Tune](./public/images/CHEERS-btp.png)
-
-
-# SCREEN SHOT OF WEBSITE HERE
 
 ## Technologies Used:
   ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
