@@ -1,8 +1,5 @@
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 400px;
+section {
+  width: 500px;
   padding: 60px;
   background-color: rgba(82, 78, 78, 0.65);
   display: block;
@@ -10,7 +7,6 @@
   margin-right: auto;
   position: relative;
   top: 70px;
-  border-radius: 20px;
-  color: white;
-  font: bold;
+  color:white;
+  font-size: ;
 }
