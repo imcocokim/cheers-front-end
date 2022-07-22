@@ -5,7 +5,7 @@ import styles from './Profile.module.css'
 const Profile = ({user, profile}) => {
   return ( 
     <div className={styles.wrapper}>
-      <div className='all-profiles'>
+      <div className={styles.cardContent}>
         <img src={profile.photo}
           alt={profile.name}
           className={styles.cardPhoto}
