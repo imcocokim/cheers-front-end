@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import DrinkDropdown from '../../components/DrinkDropdown/DrinkDropdown'
 import * as boozyTuneService from '../../services/boozyTuneService'
+import styles from './AddBoozyTune.module.css'
 
 const AddBoozyTune = (props) => {
   const navigate = useNavigate()
@@ -32,7 +33,7 @@ const AddBoozyTune = (props) => {
   }
   
   return (
-    <>
+    <div className={styles.boozyT}>
       <form autoComplete='off' onSubmit={handleSubmit}>
         <h1>{track.name}</h1>
         <h3>{track.artist}</h3>
@@ -42,7 +43,7 @@ const AddBoozyTune = (props) => {
         <input type="text" name='comment' placeholder='Add your thoughts about this pairing!' value={comment} onChange={handleChange}/><br />
         <button type='submit'>Add Boozy Tune</button>
       </form>
-    </>
+    </div>
   );
 }
 
