@@ -26,3 +26,6 @@
   display: flex;
   justify-content: center;
 }
+.photoInput > input {
+  margin-right: 15px;
+}
