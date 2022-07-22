@@ -12,9 +12,6 @@ h2{
 }
 
 .cbtn {
-  /* background-color: rgb(22, 26, 30);
-  color: white; */
-  /* border-radius: 5px; */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -29,5 +26,10 @@ h2{
   margin-right: auto;
   position: relative;
   top: 70px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
 }
 

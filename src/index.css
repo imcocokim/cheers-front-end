@@ -14,3 +14,24 @@ button {
   margin: 5px auto 10px auto;
   color: whitesmoke;
 }
+input {
+  height: 35px;
+  border-radius: 5px;
+  margin: 5px;
+  border: none;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+::placeholder{
+  font-family: 'Rajdhani', sans-serif;
+  padding: 4px;
+  font-size: 15px;
+}
+
+select {
+  height: 30px;
+  border-radius: 5px;
+  margin: 5px;
+  border: none;
+}
