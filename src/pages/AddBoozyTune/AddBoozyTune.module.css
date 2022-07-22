@@ -1,0 +1,21 @@
+.boozyT {
+  background-color: rgba(82, 78, 78, 0.65);
+  width: 500px;
+  padding: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 70px;
+}
+.boozyBtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.boozyIn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
