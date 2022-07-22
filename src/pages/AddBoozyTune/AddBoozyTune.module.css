@@ -8,3 +8,14 @@
   position: relative;
   top: 70px;
 }
+.boozyBtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.boozyIn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
