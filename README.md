@@ -1,5 +1,5 @@
 # CHEERS!🍻 🎶
-- [Click here to get to the Deployed Link](https://cheers-ga.netlify.app)
+[Click here to get to the Deployed Link](https://cheers-ga.netlify.app)
 
 ## Getting Started  
 CHEERS is where you can pair songs with drinks! There are four sections:
@@ -16,18 +16,22 @@ Users are able to:
 
 ## Github
 
-- [Click here to get to the Back-End Github](https://github.com/Recipra/cheers-back-end)
+[Click here to get to the Back-End Github](https://github.com/Recipra/cheers-back-end)
 
 ## Planning  
 
-- [Click here to get a closer look at our Trello Planning Materials](https://trello.com/b/rgQGmaqS/cheers)
+[Click here to get a closer look at our Trello Planning Materials](https://trello.com/b/rgQGmaqS/cheers)
 
 ### ERD & Wireframe
 #### [Click here to get a closer look to the ERD and Wireframe](https://whimsical.com/cheers-McPc4UySsYLgaNQAbJjUeZ)
-![alt text](./public/images/ERD.png)
-![alt text](./public/images/wireframe.png)
+![ERD](./public/images/ERD.png)
+![Wireframe](./public/images/wireframe.png)
 
 ### Website Preview
+![Landing Page](./public/images/CHEERS-landing.png)
+![Boozy Tune Game](./public/images/CHEERS-btg.png)
+![Dispay Boozy Tune](./public/images/CHEERS-btp.png)
+
 
 # SCREEN SHOT OF WEBSITE HERE
 
@@ -42,7 +46,7 @@ Users are able to:
   ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## API Used:
-- ![Audio DB](./public/images/audiodb.png)
+![Audio DB](./public/images/audiodb.png)
 
 ## Next Steps
 - [ ] 'My Tastes' page where users can see their songs by their drink choices
