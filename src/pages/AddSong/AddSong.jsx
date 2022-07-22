@@ -30,9 +30,8 @@ const AddSong = () => {
       <h2>Search Result:</h2>
       {result 
         ? <>
-            <img src={result.strTrackThumb} alt={`${result.strTrack} album cover`} />
             <p>{result.strTrack}: {result.strArtist} --- {result.strAlbum}</p>
-            <button onClick={addSongToDb}>Add</button>
+            <button className={styles.cbtn} onClick={addSongToDb}>Add</button>
           </>
         : display()
       }
