@@ -39,6 +39,7 @@ const AddBoozyTune = (props) => {
         <h3>{track.artist}</h3>
         <h3>{track.genre}</h3>
         <button className={styles.boozyBtn} onClick={() => navigate('/add-song')}>Cancel</button><br />
+        <h3>Pair a drink with your song!</h3>
         <DrinkDropdown drinks={props.drinks} onChange={handleDrinkChange}/><br />
         <input className={styles.boozyIn} type="text" name='comment' placeholder='Add your thoughts about this pairing!' value={comment} onChange={handleChange}/><br />
         <button className={styles.boozyBtn} type='submit'>Add Boozy Tune</button>
