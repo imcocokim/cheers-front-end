@@ -12,7 +12,7 @@ function BoozyTunesGame() {
   const handleSubmit = async () => {
     const boozyTune = await boozyTuneService.addBoozyTune({song:songData._id, pairedDrink:drinkData._id})
     if (boozyTune.author){
-      setMsg('The Boozy Has Been Added To Your Profile!')
+      setMsg('The Boozy Tune Has Been Added To Your Profile!')
     } else {
       setMsg('Oh no! Something went wrong!')
     }
@@ -36,7 +36,7 @@ function BoozyTunesGame() {
     return (
       <>
         <p>{drinkData?.name} {drinkData?.category}</p><p>{songData?.name} by {songData?.artist}</p>
-        <button onClick={handleSubmit}>Create Boozy Tune?</button> 
+        <button onClick={handleSubmit}>Create Boozy Tune</button> 
         <button onClick={handleReset} >Skip</button>
       </>
     )
@@ -45,7 +45,7 @@ function BoozyTunesGame() {
 const displayMsg = () => {
   return(
     <>
-      <h2>{msg}</h2>
+      <p>{msg}</p>
       <button onClick={handleReset}>Play Again?</button>
     </>
   )
@@ -54,11 +54,11 @@ const displayMsg = () => {
   return ( 
     <div className={styles.bzcnt}>
       <h1>Boozy Tunes</h1>
-      <h2> Boozy Tunes Results</h2>
-      {msg 
+      <h3>Quickly add boozy tunes to your profile if you think the tune pairs well with the drink!</h3>
+      <h4>{msg 
         ? displayMsg()
         : displayRandomPair()
-      }
+      }</h4>
     </div>
   )
 }
