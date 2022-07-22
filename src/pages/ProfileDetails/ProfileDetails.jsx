@@ -16,7 +16,6 @@ const ProfileDetails = ({user}) => {
     }
     fetchAllBoozyTunes()
   }, [profile._id])
-  console.log(boozyTunes)
 
   return (
     <>

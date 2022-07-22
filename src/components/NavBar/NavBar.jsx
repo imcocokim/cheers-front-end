@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
-import logo from './CHEERS-logo2.png'
+import logo from './CHEERS-logo.png'
 
 const NavBar = ({ user, userProfile, handleLogout }) => {
-  console.log(logo);
   return (
     <>
       {user ?

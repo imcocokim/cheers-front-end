@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import styles from './BoozyTuneCard.module.css'
-import blue from './images/cheers-blue.jpg'
-import gray from './images/cheers-gray.jpg'
-import black from './images/cheers-black.jpg'
-import red from './images/cheers-red.jpg'
+import blue from './images/cheers-blue.png'
+import gray from './images/cheers-gray.png'
+import black from './images/cheers-black.png'
+import red from './images/cheers-red.png'
 
 
 const BoozyTuneCard = ({boozyTune, profile, user, handleDeleteBzyTn}) => {

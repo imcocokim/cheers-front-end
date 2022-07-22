@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SearchSongForm from "../../components/SearchSongForm/SearchSongForm";
 import styles from './AddSong.module.css'
 import * as songService from '../../services/songService'
@@ -18,7 +18,6 @@ const AddSong = () => {
 
   const addSongToDb = async () => {
     const res = await songService.addSong(result)
-    console.log(res)
     navigate('/add-boozy-tune', {state: res})
   }
 
