@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import styles from '../../components/SignupForm/SignupForm.module.css'
 import DrinkDropdown from "../../components/DrinkDropdown/DrinkDropdown"
 import SongDropdown from '../../components/SongDropdown/SongDropdown'
+import styles from './EditProfile.module.css'
 
 
 const EditProfile = props => {  
@@ -30,6 +30,7 @@ const EditProfile = props => {
     return !(formData.name)}
   return (
     <>
+      <h1>Edit Profile</h1>
       <form
         autoComplete="off"
         onSubmit={handleSubmit}
@@ -47,7 +48,7 @@ const EditProfile = props => {
           />
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="favorite-song" className={styles.label}>Favorite Song:</label>
+          <label htmlFor="favorite-song" className={styles.label}>Favorite Song: </label>
           <SongDropdown songs={props.songs} onChange={handleChange} />
         </div>
         <div className={styles.inputContainer}>
