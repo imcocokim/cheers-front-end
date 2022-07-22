@@ -19,6 +19,11 @@ p {
 .favorites {
   color: white;
   font-weight: bold;
+  font-size: larger;
+}
+
+h2 {
+  font-family: 'Sigmar One', 'cursive';
 }
 
 .buttonContainer {
