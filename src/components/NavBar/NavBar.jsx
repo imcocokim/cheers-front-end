@@ -10,7 +10,7 @@ const NavBar = ({ user, userProfile, handleLogout }) => {
           <Link to='/'>
           <img className={styles.logo} src={logo} alt="CHEERS" />
           </Link>
-          <hr class="solid"/>
+          <hr className="solid"/>
             <p className={styles.welc}>Welcome, {user.name}!</p>
             <li className={styles.navul}><Link to="/add-song">Add Tune</Link></li>
             <li className={styles.navul}><Link to="/boozy-tunes">Boozy Tunes</Link></li>
