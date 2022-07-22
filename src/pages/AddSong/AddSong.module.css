@@ -15,7 +15,7 @@ h2{
   margin-right: auto;
 }
 .addcn {
-  width: 300px;
+  width: 400px;
   padding: 60px;
   background-color: rgba(82, 78, 78, 0.65);
   display: block;
@@ -23,5 +23,12 @@ h2{
   margin-right: auto;
   position: relative;
   top: 70px;
+  border-radius: 20px;
 }
 
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
